@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>滇西南6日自驾行程 · 芒市5晚连住优化版</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #e74c3c;
+            --bg: #f8f9fa;
+            --card: #ffffff;
+            --border: #e1e4e8;
+            --text: #24292e;
+            --muted: #6a737d;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        header h1 { font-size: 1.8em; margin-bottom: 10px; }
+        header .subtitle { opacity: 0.9; font-size: 0.95em; }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+        
+        .highlight-box h2 { font-size: 1.2em; margin-bottom: 15px; }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+        
+        .stat-item {
+            background: rgba(255,255,255,0.2);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .stat-item .number { font-size: 2em; font-weight: bold; }
+        .stat-item .label { font-size: 0.85em; opacity: 0.9; }
+        
+        .day-card {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--accent);
+        }
+        
+        .day-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .day-title { font-size: 1.3em; color: var(--primary); }
+        
+        .day-tag {
+            background: var(--accent);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75em;
+        }
+        
+        .day-tag.holiday { background: #e74c3c; }
+        .day-tag.normal { background: #3498db; }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.9em;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        th { background: var(--bg); font-weight: 600; color: var(--primary); }
+        tr:hover { background: var(--bg); }
+        
+        .food-section {
+            background: #fff8e7;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+        
+        .food-section h4 { color: #d35400; margin-bottom: 10px; }
+        
+        .tips-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+        
+        .tips-box h3 { color: #1976d2; margin-bottom: 10px; }
+        
+        .warning-box {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+        
+        .route-badge {
+            display: inline-block;
+            background: #f0f0f0;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            color: var(--muted);
+            margin-left: 10px;
+        }
+        
+        .time-col {
+            white-space: nowrap;
+            color: var(--muted);
+            font-weight: 500;
+            width: 100px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--muted);
+            font-size: 0.85em;
+        }
+        
+        .comparison-table {
+            background: var(--card);
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .comparison-table th { background: var(--primary); color: white; }
+        .comparison-table td:first-child { font-weight: 600; background: var(--bg); }
+        
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            margin-left: 5px;
+        }
+        
+        .badge-green { background: #d4edda; color: #155724; }
+        .badge-red { background: #f8d7da; color: #721c24; }
+
+        /* 图片画廊样式 */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            cursor: pointer;
+            transition: transform 0.3s;
+            background: #f0f0f0;
+        }
+        
+        .gallery-item:hover { transform: scale(1.02); }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .gallery-item .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 20px 15px 15px;
+            font-size: 0.9em;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .modal.active { display: flex; }
+        
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+            object-fit: contain;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 2em;
+            cursor: pointer;
+        }
+        
+        .day-gallery {
+            margin: 20px 0;
+            padding: 20px;
+            background: var(--bg);
+            border-radius: 12px;
+        }
+        
+        .day-gallery h4 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .day-gallery h4::before { content: "📸"; }
+
+        .img-source {
+            color: var(--muted);
+            font-size: 0.8em;
+            margin-top: 10px;
+        }
+
+        .xhs-link {
+            display: inline-block;
+            margin-top: 5px;
+            color: #ff2442;
+            font-size: 0.85em;
+            text-decoration: none;
+            background: rgba(255,255,255,0.9);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+        
+        .xhs-link:hover {
+            background: #ff2442;
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.4em; }
+            .day-header { flex-direction: column; align-items: flex-start; }
+            table { font-size: 0.8em; }
+            th, td { padding: 8px; }
+            .gallery { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <header>
+            <h1>🚗 滇西南6日自驾行程</h1>
+            <p class="subtitle">芒市5晚连住 · 零换酒店优化版</p>
+        </header>
+        
+        <div class="highlight-box">
+            <h2>🎯 核心优化</h2>
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="number">5</div>
+                    <div class="label">芒市连住晚数</div>
+                </div>
+                <div class="stat-item">
+                    <div class="number">0</div>
+                    <div class="label">换酒店次数</div>
+                </div>
+                <div class="stat-item">
+                    <div class="number">2h</div>
+                    <div class="label">单日最长驾驶</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 精选景点图片（来自小红书） -->
+        <div class="day-card">
+            <h3 style="margin-bottom: 20px; color: var(--primary);">📸 精选景点预览（来自小红书）</h3>
+            <div class="gallery">
+                <div class="gallery-item" onclick="openModal(this)">
+                    <img src="images/yunnan-trip/mengjinta.jpg" alt="勐焕大金塔" loading="lazy">
+                    <div class="caption">勐焕大金塔</div>
+                    <a href="https://www.xiaohongshu.com/explore/6996fc6f000000001a0235cd" target="_blank" class="xhs-link">📕 小红书笔记</a>
+                </div>
+                <div class="gallery-item" onclick="openModal(this)">
+                    <img src="images/yunnan-trip/mengjinyin.jpg" alt="勐焕银塔" loading="lazy">
+                    <div class="caption">勐焕银塔</div>
+                    <a href="https://www.xiaohongshu.com/explore/69774c9b000000002800a28f" target="_blank" class="xhs-link">📕 小红书笔记</a>
+                </div>
+                <div class="gallery-item" onclick="openModal(this)">
+                    <img src="images/yunnan-trip/yizhailiangguo.jpg" alt="一寨两国" loading="lazy">
+                    <div class="caption">一寨两国</div>
+                    <a href="https://www.xiaohongshu.com/explore/699bc412000000000a032271" target="_blank" class="xhs-link">📕 小红书笔记</a>
+                </div>
+                <div class="gallery-item" onclick="openModal(this)">
+                    <img src="images/yunnan-trip/jiegaoguomen.jpg" alt="姐告国门" loading="lazy">
+                    <div class="caption">姐告国门</div>
+                    <a href="https://www.xiaohongshu.com/explore/6995949e000000001d0121b1" target="_blank" class="xhs-link">📕 小红书笔记</a>
+                </div>
+                <div class="gallery-item" onclick="openModal(this)">
+                    <img src="images/yunnan-trip/heshunguzhen.jpg" alt="和顺古镇" loading="lazy">
+                    <div class="caption">和顺古镇</div>
+                    <a href="https://www.xiaohongshu.com/explore/691c42ef000000001e00b6ba" target="_blank" class="xhs-link">📕 小红书笔记</a>
+                </div>
+                <div class="gallery-item" onclick="openModal(this)">
+                    <img src="images/yunnan-trip/rehaidaguoguo.jpg" alt="热海大滚锅" loading="lazy">
+                    <div class="caption">热海大滚锅</div>
+                    <a href="https://www.xiaohongshu.com/explore/69083586000000000303657d" target="_blank" class="xhs-link">📕 小红书笔记</a>
+                </div>
+                <div class="gallery-item" onclick="openModal(this)">
+                    <img src="images/yunnan-trip/gaoligongshan.jpg" alt="高黎贡山" loading="lazy">
+                    <div class="caption">高黎贡山徒步</div>
+                    <a href="https://www.xiaohongshu.com/explore/699d2666000000001d0117a0" target="_blank" class="xhs-link">📕 小红书笔记</a>
+                </div>
+            </div>
+            <p class="img-source">💡 点击图片可放大查看 · 图片来自小红书用户分享</p>
+        </div>
+        
+        <div class="comparison-table">
+            <table>
+                <tr>
+                    <th>项目</th>
+                    <th>原方案</th>
+                    <th>优化后</th>
+                </tr>
+                <tr>
+                    <td>住宿</td>
+                    <td>芒市3晚+腾冲1晚+芒市1晚</td>
+                    <td><strong>芒市5晚连住同一酒店</strong> <span class="badge badge-green">优势</span></td>
+                </tr>
+                <tr>
+                    <td>换酒店</td>
+                    <td>2次（打包/退房/入住）</td>
+                    <td><strong>0次</strong> <span class="badge badge-green">优势</span></td>
+                </tr>
+                <tr>
+                    <td>日驾驶半径</td>
+                    <td>≤1小时</td>
+                    <td>单程最长2小时</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="tips-box">
+            <h3>💡 零换酒店优势</h3>
+            <ul>
+                <li>彻底告别打包损耗，行李全程摊开不用收</li>
+                <li>早上出发时间更灵活，不用赶退房</li>
+                <li>特产采购后直接回酒店装箱，不用搬来搬去</li>
+            </ul>
+        </div>
+        
+        <h2 style="margin: 30px 0 20px; color: var(--primary);">📅 行程总览</h2>
+        
+        <div class="day-card">
+            <div class="day-header">
+                <span class="day-title">4/1（周二）｜芒市市区·傣族风情</span>
+                <span class="day-tag normal">抵达日</span>
+            </div>
+            
+            <div class="day-gallery">
+                <h4>今日景点</h4>
+                <div class="gallery">
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img src="images/yunnan-trip/mengjinta.jpg" alt="勐焕大金塔" loading="lazy">
+                        <div class="caption">勐焕大金塔</div>
+                    </div>
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img src="images/yunnan-trip/mengjinyin.jpg" alt="勐焕银塔" loading="lazy">
+                        <div class="caption">勐焕银塔</div>
+                    </div>
+                </div>
+                <p class="img-source">📷 图片来自小红书</p>
+            </div>
+            
+            <table>
+                <tr>
+                    <th class="time-col">时间</th>
+                    <th>事项</th>
+                    <th>详情/备注</th>
+                </tr>
+                <tr>
+                    <td class="time-col">10:00-12:00</td>
+                    <td><strong>勐焕大金塔→银塔</strong></td>
+                    <td>金塔入银塔出；银塔拍照出片；联票80元；塔内脱鞋</td>
+                </tr>
+                <tr>
+                    <td class="time-col">12:00-13:30</td>
+                    <td><strong>午餐：百思特美食城</strong></td>
+                    <td>入门四件套：泡鲁达+柠檬撒撇+竹米煮鸡+紫米菠萝饭</td>
+                </tr>
+                <tr>
+                    <td class="time-col">14:00-15:00</td>
+                    <td><strong>树包塔</strong></td>
+                    <td>步行街中段，15分钟打卡，免费</td>
+                </tr>
+                <tr>
+                    <td class="time-col">15:30-18:00</td>
+                    <td><strong>勐巴娜西珍奇园</strong></td>
+                    <td>孔雀放飞10:30/15:00两场；门票50元</td>
+                </tr>
+                <tr>
+                    <td class="time-col">19:00-21:00</td>
+                    <td><strong>晚餐：傣族古镇夜市</strong></td>
+                    <td>建筑观赏+小吃+歌舞表演（节假日20:00-21:00）</td>
+                </tr>
+            </table>
+            <div class="food-section">
+                <h4>🍜 美食亮点</h4>
+                <p><strong>百思特必点：</strong>勐焕老奶泡鲁达（椰奶现榨）、柠檬撒撇（牛苦肠水+柠檬汁）、竹米煮鸡（需提前2h预订）</p>
+            </div>
+        </div>
+        
+        <div class="day-card">
+            <div class="day-header">
+                <span class="day-title">4/2（周三）｜瑞丽当日往返·边境探秘</span>
+                <span class="route-badge">芒市→瑞丽→芒市（2h×2）</span>
+            </div>
+            
+            <div class="day-gallery">
+                <h4>今日景点</h4>
+                <div class="gallery">
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img src="images/yunnan-trip/yizhailiangguo.jpg" alt="一寨两国" loading="lazy">
+                        <div class="caption">一寨两国</div>
+                    </div>
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img src="images/yunnan-trip/jiegaoguomen.jpg" alt="姐告国门" loading="lazy">
+                        <div class="caption">姐告国门</div>
+                    </div>
+                </div>
+                <p class="img-source">📷 图片来自小红书</p>
+            </div>
+            
+            <table>
+                <tr><th class="time-col">时间</th><th>事项</th><th>详情/备注</th></tr>
+                <tr><td class="time-col">08:00</td><td><strong>出发</strong></td><td>芒市→瑞丽，G56高速，85km，1.5h</td></tr>
+                <tr><td class="time-col">09:30-11:00</td><td><strong>一寨两国</strong></td><td>71号界碑、一秋荡两国；门票30元；开园即入避团</td></tr>
+                <tr><td class="time-col">11:30-12:30</td><td><strong>姐告国门</strong></td><td>国门拍照+中缅友谊街购物；免费</td></tr>
+                <tr><td class="time-col">12:30-14:00</td><td><strong>午餐：瑞丽活螃蟹</strong></td><td>人保路总店，1.5-2斤双拼（香辣+清蒸），香辣汤汁务必拌面，人均105元</td></tr>
+                <tr><td class="time-col">14:30-17:00</td><td><strong>莫里热带雨林</strong></td><td>莫里瀑布+雨林步道+温泉泡脚；门票50元；或改独树成林（15元，40分钟）</td></tr>
+                <tr><td class="time-col">17:00</td><td><strong>返程</strong></td><td>瑞丽→芒市，1.5h</td></tr>
+                <tr><td class="time-col">19:30-21:00</td><td><strong>晚餐：润美民族园</strong></td><td>景颇族手抓饭，现烤环节+水酒免费；2-3人套餐150-200元，提前1h预订</td></tr>
+            </table>
+        </div>
+        
+        <div class="day-card">
+            <div class="day-header">
+                <span class="day-title">4/3（周四）｜腾冲西线·和顺+热海</span>
+                <span class="route-badge">芒市→腾冲→芒市（2h×2）</span>
+            </div>
+            
+            <div class="day-gallery">
+                <h4>今日景点</h4>
+                <div class="gallery">
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img src="images/yunnan-trip/heshunguzhen.jpg" alt="和顺古镇" loading="lazy">
+                        <div class="caption">和顺古镇</div>
+                    </div>
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img src="images/yunnan-trip/rehaidaguoguo.jpg" alt="热海大滚锅" loading="lazy">
+                        <div class="caption">热海大滚锅</div>
+                    </div>
+                </div>
+                <p class="img-source">📷 图片来自小红书</p>
+            </div>
+            
+            <table>
+                <tr><th class="time-col">时间</th><th>事项</th><th>详情/备注</th></tr>
+                <tr><td class="time-col">08:00</td><td><strong>出发</strong></td><td>芒市→腾冲，G56高速，180km，2-2.5h；潞江坝服务区停靠</td></tr>
+                <tr><td class="time-col">10:30-14:00</td><td><strong>和顺古镇</strong></td><td>图书馆+野鸭湖+艾思奇故居；门票55元；午餐<strong>有芬餐馆</strong>（棕包炒肉、大薄片），人均40-60元</td></tr>
+                <tr><td class="time-col">14:30-17:00</td><td><strong>热海大滚锅</strong></td><td>15:30错峰，避团高峰；煮鸡蛋体验（5元/串），游览1.5-2h</td></tr>
+                <tr><td class="time-col">17:00-18:00</td><td><strong>可选：黄瓜箐温泉</strong></td><td>原生硫磺泉，30-50元，极简陋；或放弃直接返程</td></tr>
+                <tr><td class="time-col">18:00</td><td><strong>返程</strong></td><td>腾冲→芒市，2h</td></tr>
+                <tr><td class="time-col">20:00</td><td><strong>晚餐：芒市</strong></td><td>林氏圆子/烂路早点/梦幻德宏餐厅</td></tr>
+            </table>
+        </div>
+        
+        <div class="day-card">
+            <div class="day-header">
+                <span class="day-title">4/4（周五/清明）｜山野咖啡日·高黎贡山深度</span>
+                <span class="day-tag holiday">清明假期</span>
+                <span class="route-badge">芒市→百花岭→潞江坝→芒市</span>
+            </div>
+            
+            <div class="day-gallery">
+                <h4>今日景点</h4>
+                <div class="gallery">
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img src="images/yunnan-trip/gaoligongshan.jpg" alt="高黎贡山" loading="lazy">
+                        <div class="caption">高黎贡山徒步</div>
+                    </div>
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img src="images/yunnan-trip/gaoligongshan.jpg" alt="咖啡庄园" loading="lazy">
+                        <div class="caption">咖啡庄园</div>
+                    </div>
+                </div>
+                <p class="img-source">📷 图片来自小红书</p>
+            </div>
+            
+            <table>
+                <tr><th class="time-col">时间</th><th>事项</th><th>详情/备注</th></tr>
+                <tr><td class="time-col">07:00</td><td><strong>出发</strong></td><td>芒市→百花岭，2h；最后30km盘山砂石路</td></tr>
+                <tr><td class="time-col">09:00-13:00</td><td><strong>高黎贡山徒步</strong></td><td>百花岭-阴阳谷路线，8km/400m爬升/3-4h；向导200元/天；阴阳谷野温泉（一冷一热）</td></tr>
+                <tr><td class="time-col">13:00-14:00</td><td><strong>路餐</strong></td><td>自备傣味糯米饭+酸角糕+挂耳咖啡</td></tr>
+                <tr><td class="time-col">14:30-16:30</td><td><strong>比顿咖啡庄园</strong></td><td>手冲体验（铁皮卡vs卡蒂姆），90分钟，80-150元/人；可选咖啡宴</td></tr>
+                <tr><td class="time-col">17:00</td><td><strong>返程</strong></td><td>潞江坝→芒市，1.5h，110km；途中采购芒果（1-2元/斤）</td></tr>
+                <tr><td class="time-col">19:00</td><td><strong>晚餐：芒市</strong></td><td>过手米线/傣味烧烤/烧烤一条街</td></tr>
+            </table>
+        </div>
+        
+        <div class="day-card">
+            <div class="day-header">
+                <span class="day-title">4/5（周六/清明）｜芒市躺平·慢生活收官</span>
+                <span class="day-tag holiday">清明假期</span>
+            </div>
+            <table>
+                <tr><th class="time-col">时间</th><th>事项</th><th>详情/备注</th></tr>
+                <tr><td class="time-col">09:00+</td><td><strong>自然醒</strong></td><td>睡到自然醒，酒店早餐</td></tr>
+                <tr><td class="time-col">10:00-12:30</td><td><strong>丙午街/宏利市场</strong></td><td>特产采购：牛干巴（80-120元/斤）、酸角糕、小粒咖啡、傣族豆豉；即食稀豆粉饵丝+泡鲁达</td></tr>
+                <tr><td class="time-col">15:00-17:00</td><td><strong>法帕温泉</strong></td><td>傣族传统硫磺泉，40-60元，1.5-2h；配套温泉煮蛋+竹筒饭+香草烤鱼</td></tr>
+                <tr><td class="time-col">19:00-21:00</td><td><strong>告别晚餐：芒市烧烤一条街</strong></td><td>烤五花肉（2-3元/串）+包烧脑花+柠檬烤鱼+缅甸啤酒</td></tr>
+            </table>
+        </div>
+        
+        <div class="day-card">
+            <div class="day-header">
+                <span class="day-title">4/6（周日）｜早班机返程</span>
+            </div>
+            <table>
+                <tr><th class="time-col">时间</th><th>事项</th><th>详情/备注</th></tr>
+                <tr><td class="time-col">05:30</td><td><strong>起床</strong></td><td>设3个闹钟，间隔5分钟</td></tr>
+                <tr><td class="time-col">06:00</td><td><strong>出发</strong></td><td>前往芒市机场，车程20分钟</td></tr>
+                <tr><td class="time-col">07:00</td><td><strong>起飞</strong></td><td>芒市✈️重庆，飞行2h；随身带挂耳咖啡+酸角糕+牛干巴</td></tr>
+            </table>
+        </div>
+        
+        <div class="warning-box">
+            <h3>⚠️ 关键提示</h3>
+            <ul>
+                <li><strong>驾驶疲劳管理：</strong>4/3和4/4为长途往返日（各4小时驾驶），建议两人轮换驾驶，途中咖啡庄园/服务区休息</li>
+                <li><strong>清明错峰：</strong>4/4高黎贡山07:00出发领先假期人流；4/3热海15:30错峰避团</li>
+                <li><strong>酒店选择：</strong>优先傣族古镇周边或市中心，确认免费停车且车位充足</li>
+            </ul>
+        </div>
+        
+        <footer>
+            <p>📅 适用日期：2026年4月1日-6日</p>
+            <p>🚗 核心策略：芒市5晚连住，零换酒店</p>
+        </footer>
+    </div>
+    
+    <div class="modal" id="imageModal" onclick="closeModal()">
+        <span class="modal-close">&times;</span>
+        <img id="modalImage" src="" alt="">
+    </div>
+    
+    <script>
+        function openModal(element) {
+            const img = element.querySelector('img');
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modalImg.src = img.src;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
+    </script>
+</body>
+</html>
