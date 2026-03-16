@@ -382,19 +382,22 @@
 
         .xhs-link {
             display: inline-block;
-            margin-top: 5px;
-            color: #ff2442;
-            font-size: 0.85em;
+            margin-top: 8px;
+            color: white;
+            font-size: 0.8em;
             text-decoration: none;
-            background: rgba(255,255,255,0.9);
-            padding: 4px 10px;
+            background: linear-gradient(135deg, #ff2442 0%, #ff006e 100%);
+            padding: 6px 14px;
             border-radius: 20px;
-            font-weight: 500;
+            font-weight: 700;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(255, 36, 66, 0.4);
+            transition: all 0.3s;
         }
         
         .xhs-link:hover {
-            background: #ff2442;
-            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 36, 66, 0.6);
         }
 
         @media (max-width: 600px) {
