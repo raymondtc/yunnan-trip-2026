@@ -8,16 +8,17 @@
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700;900&display=swap');
         
         :root {
-            --primary: #1a1a2e;
-            --accent: #ff006e;
-            --accent-alt: #8338ec;
-            --bg: #0f0f1a;
-            --card: #16213e;
-            --border: #2d3561;
-            --text: #eaeaea;
-            --muted: #a0a0a0;
-            --rock-gradient: linear-gradient(135deg, #ff006e 0%, #8338ec 50%, #3a86ff 100%);
-            --dark-gradient: linear-gradient(180deg, #1a1a2e 0%, #0f0f1a 100%);
+            --primary: #00f5ff;
+            --accent: #ff2a6d;
+            --accent-alt: #05d9e8;
+            --bg: #0a0e27;
+            --card: #111936;
+            --border: #1e3a5f;
+            --text: #f0f6fc;
+            --muted: #8b949e;
+            --rock-gradient: linear-gradient(135deg, #ff2a6d 0%, #b026ff 50%, #00f5ff 100%);
+            --dark-gradient: linear-gradient(180deg, #0a0e27 0%, #050810 100%);
+            --glow: 0 0 20px rgba(0, 245, 255, 0.3);
         }
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -83,7 +84,15 @@
             margin-bottom: 30px;
         }
         
-        .highlight-box h2 { font-size: 1.2em; margin-bottom: 15px; }
+        .highlight-box h2 { 
+            font-size: 1.3em; 
+            margin-bottom: 15px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: white;
+            text-shadow: 0 0 20px rgba(255, 42, 109, 0.5);
+        }
         
         .stats {
             display: grid;
@@ -98,7 +107,14 @@
             text-align: center;
         }
         
-        .stat-item .number { font-size: 2em; font-weight: 900; }
+        .stat-item .number { 
+            font-size: 2em; 
+            font-weight: 900;
+            background: linear-gradient(135deg, #00f5ff 0%, #ff2a6d 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
         .stat-item .label { font-size: 0.85em; opacity: 0.9; }
         
         .day-card {
@@ -106,7 +122,7 @@
             border-radius: 16px;
             padding: 25px;
             margin-bottom: 25px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3), 0 0 20px rgba(0, 245, 255, 0.1);
             border-left: 4px solid var(--accent);
         }
         
@@ -119,18 +135,29 @@
             gap: 10px;
         }
         
-        .day-title { font-size: 1.3em; color: var(--primary); }
+        .day-title { 
+            font-size: 1.4em; 
+            color: var(--text);
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
         
         .day-tag {
-            background: var(--accent);
+            background: var(--rock-gradient);
             color: white;
             padding: 4px 12px;
             border-radius: 20px;
             font-size: 0.75em;
         }
         
-        .day-tag.holiday { background: #e74c3c; }
-        .day-tag.normal { background: #3498db; }
+        .day-tag.holiday { 
+            background: linear-gradient(135deg, #ff2a6d 0%, #ff6b35 100%);
+            box-shadow: 0 4px 15px rgba(255, 42, 109, 0.4);
+        }
+        .day-tag.normal { 
+            background: linear-gradient(135deg, #00f5ff 0%, #05d9e8 100%);
+            box-shadow: 0 4px 15px rgba(0, 245, 255, 0.4);
+        }
         
         table {
             width: 100%;
@@ -145,7 +172,15 @@
             border-bottom: 1px solid var(--border);
         }
         
-        th { background: var(--bg); font-weight: 600; color: var(--primary); }
+        th { 
+            background: linear-gradient(135deg, #111936 0%, #1e3a5f 100%); 
+            font-weight: 700; 
+            color: var(--text);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85em;
+            text-shadow: 0 0 10px rgba(0, 245, 255, 0.5);
+        }
         tr:hover { background: var(--bg); }
         
         .food-section {
@@ -365,7 +400,7 @@
         }
         
         .day-gallery h4 {
-            color: var(--primary);
+            color: var(--text);
             margin-bottom: 15px;
             display: flex;
             align-items: center;
@@ -387,19 +422,19 @@
             color: white;
             font-size: 0.8em;
             text-decoration: none;
-            background: linear-gradient(135deg, #ff2442 0%, #ff006e 100%);
+            background: linear-gradient(135deg, #ff2a6d 0%, #b026ff 100%);
             padding: 6px 14px;
             border-radius: 20px;
             font-weight: 700;
             letter-spacing: 1px;
-            box-shadow: 0 4px 15px rgba(255, 36, 66, 0.4);
+            box-shadow: 0 4px 15px rgba(255, 42, 109, 0.4);
             transition: all 0.3s;
             z-index: 10;
         }
         
         .xhs-link:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 36, 66, 0.6);
+            box-shadow: 0 0 25px rgba(255, 42, 109, 0.8);
         }
 
         @media (max-width: 600px) {
@@ -440,7 +475,7 @@
         
         <!-- 精选景点图片（来自小红书） -->
         <div class="day-card">
-            <h3 style="margin-bottom: 20px; color: var(--primary);">📸 精选景点预览（来自小红书）</h3>
+            <h3 style="margin-bottom: 20px; color: var(--text);">📸 精选景点预览（来自小红书）</h3>
             <div class="gallery">
                 <div class="gallery-item" onclick="openModal(this)">
                     <img src="images/yunnan-trip/mengjinta.jpg" alt="勐焕大金塔" loading="lazy">
@@ -515,7 +550,7 @@
             </ul>
         </div>
         
-        <h2 style="margin: 30px 0 20px; color: var(--primary);">📅 行程总览</h2>
+        <h2 style="margin: 30px 0 20px; color: var(--text);">📅 行程总览</h2>
         
         <div class="day-card">
             <div class="day-header">
@@ -710,7 +745,7 @@
         </div>
         
         <!-- 芒市美食推荐（朋友推荐店家） -->
-        <h2 style="margin: 40px 0 20px; color: var(--primary);">🍜 芒市美食推荐</h2>
+        <h2 style="margin: 40px 0 20px; color: var(--text);">🍜 芒市美食推荐</h2>
         
         <div class="day-card" style="border-left-color: #e74c3c;">
             <div class="day-header">
