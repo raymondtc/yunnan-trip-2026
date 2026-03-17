@@ -6,337 +6,71 @@
     <title>滇西南旅行指南 | Plan A/B 双方案</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap');
-        
         :root {
-            --bg: #0d1117;
-            --bg-secondary: #161b22;
-            --border: #30363d;
-            --text: #c9d1d9;
-            --text-secondary: #8b949e;
-            --accent: #58a6ff;
-            --accent-soft: rgba(88, 166, 255, 0.15);
-            --success: #3fb950;
-            --success-soft: rgba(46, 160, 67, 0.15);
-            --warning: #d29922;
-            --warning-soft: rgba(187, 128, 9, 0.15);
-            --danger: #f85149;
-            --danger-soft: rgba(248, 81, 73, 0.15);
+            --bg: #0d1117; --bg-secondary: #161b22; --border: #30363d;
+            --text: #c9d1d9; --text-secondary: #8b949e;
+            --accent: #58a6ff; --accent-soft: rgba(88, 166, 255, 0.15);
+            --success: #3fb950; --success-soft: rgba(46, 160, 67, 0.15);
+            --warning: #d29922; --warning-soft: rgba(187, 128, 9, 0.15);
+            --danger: #f85149; --danger-soft: rgba(248, 81, 73, 0.15);
             --code-bg: #161b22;
         }
-        
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
         body {
             font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            font-size: 16px;
+            background: var(--bg); color: var(--text); line-height: 1.6; font-size: 16px;
         }
+        .container { max-width: 1012px; margin: 0 auto; padding: 40px 32px; }
+        header { border-bottom: 1px solid var(--border); padding-bottom: 24px; margin-bottom: 32px; }
+        header h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; }
+        header .subtitle { color: var(--text-secondary); font-size: 1.125rem; }
         
-        .container { 
-            max-width: 1012px; 
-            margin: 0 auto; 
-            padding: 40px 32px;
-        }
-        
-        header {
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 24px;
-            margin-bottom: 32px;
-        }
-        
-        header h1 { 
-            font-size: 2rem; 
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            margin-bottom: 8px;
-        }
-        
-        header .subtitle { 
-            color: var(--text-secondary);
-            font-size: 1.125rem;
-        }
-        
-        .plan-switcher {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 32px;
-            background: var(--bg-secondary);
-            padding: 8px;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-        }
-        
-        .plan-btn {
-            flex: 1;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: 600;
-            transition: all 0.2s;
-            background: transparent;
-            color: var(--text-secondary);
-        }
-        
+        .plan-switcher { display: flex; gap: 8px; margin-bottom: 32px; background: var(--bg-secondary); padding: 8px; border-radius: 8px; border: 1px solid var(--border); }
+        .plan-btn { flex: 1; padding: 12px 24px; border: none; border-radius: 6px; cursor: pointer; font-size: 1rem; font-weight: 600; transition: all 0.2s; background: transparent; color: var(--text-secondary); }
         .plan-btn:hover { background: var(--border); }
-        
-        .plan-btn.active {
-            background: var(--accent);
-            color: white;
-        }
-        
+        .plan-btn.active { background: var(--accent); color: white; }
         .plan-content { display: none; }
         .plan-content.active { display: block; }
         
-        .toc {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 16px 20px;
-            margin-bottom: 32px;
-        }
+        .toc { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 6px; padding: 16px 20px; margin-bottom: 32px; }
+        .toc h2 { font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-secondary); margin-bottom: 12px; }
+        .toc ul { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+        .toc li a { color: var(--accent); text-decoration: none; font-size: 0.875rem; padding: 4px 10px; border-radius: 4px; background: var(--accent-soft); transition: all 0.2s; }
+        .toc li a:hover { background: var(--accent); color: white; }
         
-        .toc h2 {
-            font-size: 0.875rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--text-secondary);
-            margin-bottom: 12px;
-        }
+        h2 { font-size: 1.5rem; font-weight: 600; margin: 48px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+        h3 { font-size: 1.25rem; font-weight: 600; margin: 32px 0 16px; }
+        table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.875rem; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+        th { background: var(--bg-secondary); font-weight: 600; text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--border); color: var(--text); }
+        td { padding: 12px 16px; border-bottom: 1px solid var(--border); vertical-align: top; }
+        tr:last-child td { border-bottom: none; } tr:hover { background: var(--bg-secondary); }
         
-        .toc ul {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        
-        .toc li a {
-            color: var(--accent);
-            text-decoration: none;
-            font-size: 0.875rem;
-            padding: 4px 10px;
-            border-radius: 4px;
-            background: var(--accent-soft);
-            transition: all 0.2s;
-        }
-        
-        .toc li a:hover {
-            background: var(--accent);
-            color: white;
-        }
-        
-        h2 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin: 48px 0 16px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid var(--border);
-        }
-        
-        h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin: 32px 0 16px;
-        }
-        
-        h4 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin: 24px 0 12px;
-        }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 16px 0;
-            font-size: 0.875rem;
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            overflow: hidden;
-        }
-        
-        th {
-            background: var(--bg-secondary);
-            font-weight: 600;
-            text-align: left;
-            padding: 12px 16px;
-            border-bottom: 1px solid var(--border);
-            color: var(--text);
-        }
-        
-        td {
-            padding: 12px 16px;
-            border-bottom: 1px solid var(--border);
-            vertical-align: top;
-        }
-        
-        tr:last-child td { border-bottom: none; }
-        tr:hover { background: var(--bg-secondary); }
-        
-        .badge {
-            display: inline-block;
-            padding: 2px 8px;
-            border-radius: 12px;
-            font-size: 0.75rem;
-            font-weight: 500;
-            margin-left: 6px;
-        }
-        
+        .badge { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; font-weight: 500; margin-left: 6px; }
         .badge-success { background: var(--success-soft); color: var(--success); }
         .badge-warning { background: var(--warning-soft); color: var(--warning); }
-        .badge-danger { background: var(--danger-soft); color: var(--danger); }
         .badge-accent { background: var(--accent-soft); color: var(--accent); }
         
-        .info-box {
-            border-left: 4px solid var(--accent);
-            background: var(--accent-soft);
-            padding: 16px 20px;
-            margin: 24px 0;
-            border-radius: 0 6px 6px 0;
-        }
+        .info-box { border-left: 4px solid var(--accent); background: var(--accent-soft); padding: 16px 20px; margin: 24px 0; border-radius: 0 6px 6px 0; }
+        .info-box h4 { margin-top: 0; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); }
+        .warning-box { border-left: 4px solid var(--warning); background: var(--warning-soft); padding: 16px 20px; margin: 24px 0; border-radius: 0 6px 6px 0; }
+        .warning-box h4 { margin-top: 0; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--warning); }
         
-        .info-box h4 {
-            margin-top: 0;
-            font-size: 0.875rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--accent);
-        }
-        
-        .warning-box {
-            border-left: 4px solid var(--warning);
-            background: var(--warning-soft);
-            padding: 16px 20px;
-            margin: 24px 0;
-            border-radius: 0 6px 6px 0;
-        }
-        
-        .warning-box h4 {
-            margin-top: 0;
-            font-size: 0.875rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--warning);
-        }
-        
-        .day-card {
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            margin: 24px 0;
-            overflow: hidden;
-        }
-        
-        .day-header {
-            background: var(--bg-secondary);
-            padding: 16px 20px;
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        
+        .day-card { border: 1px solid var(--border); border-radius: 6px; margin: 24px 0; overflow: hidden; }
+        .day-header { background: var(--bg-secondary); padding: 16px 20px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
         .day-title { font-weight: 600; font-size: 1rem; }
-        
         .day-content { padding: 20px; }
-        
-        .route-badge {
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-            background: var(--bg-secondary);
-            padding: 4px 10px;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-        }
-        
-        .village-card {
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 16px 20px;
-            margin: 12px 0;
-            background: var(--bg-secondary);
-        }
-        
-        .village-card h4 {
-            margin-top: 0;
-            color: var(--accent);
-        }
-        
-        code {
-            font-family: 'SF Mono', Monaco, monospace;
-            background: var(--code-bg);
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-size: 0.85em;
-        }
-        
-        ul, ol { margin: 12px 0; padding-left: 24px; }
-        li { margin: 6px 0; }
-        
-        a { color: var(--accent); text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        
-        .time-col {
-            font-family: 'SF Mono', Monaco, monospace;
-            font-size: 0.8125rem;
-            color: var(--text-secondary);
-            white-space: nowrap;
-        }
-        
-        footer {
-            margin-top: 64px;
-            padding-top: 32px;
-            border-top: 1px solid var(--border);
-            color: var(--text-secondary);
-            font-size: 0.875rem;
-            text-align: center;
-        }
-        
-        .theme-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 8px 12px;
-            cursor: pointer;
-            font-size: 0.875rem;
-            color: var(--text);
-            transition: all 0.2s;
-            z-index: 100;
-        }
-        
+        .route-badge { font-size: 0.75rem; color: var(--text-secondary); background: var(--bg-secondary); padding: 4px 10px; border-radius: 12px; border: 1px solid var(--border); }
+        .village-card { border: 1px solid var(--border); border-radius: 6px; padding: 16px 20px; margin: 12px 0; background: var(--bg-secondary); }
+        .village-card h4 { margin-top: 0; color: var(--accent); }
+        code { font-family: 'SF Mono', Monaco, monospace; background: var(--code-bg); padding: 2px 6px; border-radius: 3px; font-size: 0.85em; }
+        ul, ol { margin: 12px 0; padding-left: 24px; } li { margin: 6px 0; }
+        a { color: var(--accent); text-decoration: none; } a:hover { text-decoration: underline; }
+        .time-col { font-family: 'SF Mono', Monaco, monospace; font-size: 0.8125rem; color: var(--text-secondary); white-space: nowrap; }
+        footer { margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--border); color: var(--text-secondary); font-size: 0.875rem; text-align: center; }
+        .theme-toggle { position: fixed; top: 20px; right: 20px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 6px; padding: 8px 12px; cursor: pointer; font-size: 0.875rem; color: var(--text); transition: all 0.2s; z-index: 100; }
         .theme-toggle:hover { background: var(--border); }
-        
-        [data-theme="light"] {
-            --bg: #ffffff;
-            --bg-secondary: #f6f8fa;
-            --border: #d0d7de;
-            --text: #1f2328;
-            --text-secondary: #656d76;
-            --accent: #0969da;
-            --accent-soft: #ddf4ff;
-            --success: #1a7f37;
-            --success-soft: #dafbe1;
-            --warning: #9a6700;
-            --warning-soft: #fff8c5;
-            --danger: #cf222e;
-            --danger-soft: #ffebe9;
-            --code-bg: #f6f8fa;
-        }
-        
-        @media (max-width: 768px) {
-            .container { padding: 20px 16px; }
-            header h1 { font-size: 1.5rem; }
-            .plan-switcher { flex-direction: column; }
-        }
+        [data-theme="light"] { --bg: #ffffff; --bg-secondary: #f6f8fa; --border: #d0d7de; --text: #1f2328; --text-secondary: #656d76; --accent: #0969da; --accent-soft: #ddf4ff; --success: #1a7f37; --success-soft: #dafbe1; --warning: #9a6700; --warning-soft: #fff8c5; --danger: #cf222e; --danger-soft: #ffebe9; --code-bg: #f6f8fa; }
+        @media (max-width: 768px) { .container { padding: 20px 16px; } header h1 { font-size: 1.5rem; } .plan-switcher { flex-direction: column; } }
     </style>
 </head>
 <body>
@@ -381,7 +115,6 @@
             <section id="overview-a">
                 <h2>Plan A · 行程概览</h2>
                 <p>本行程采用<strong>芒市6晚连住</strong>策略，以芒市为中心，每日向外辐射游玩。包含<strong>瑞丽边境探秘</strong>和<strong>腾冲火山温泉</strong>两大亮点。</p>
-                
                 <table>
                     <tr><th>配置项</th><th>数值</th><th>说明</th></tr>
                     <tr><td>总天数</td><td><code>7</code></td><td>3月31日 - 4月6日</td></tr>
@@ -402,18 +135,15 @@
                 </table>
             </section>
 
-            <!-- Plan A Day 0-6 -->
             <section id="day0-a">
                 <h2>Day 0 · 抵达芒市</h2>
                 <div class="day-card">
-                    <div class="day-header">
-                        <span class="day-title">3月31日（周一）｜抵达日</span>
-                    </div>
+                    <div class="day-header"><span class="day-title">3月31日（周一）｜抵达日</span></div>
                     <div class="day-content">
                         <table>
                             <tr><th class="time-col">时间</th><th>事项</th><th>详情/备注</th></tr>
                             <tr><td class="time-col">晚上</td><td><strong>抵达芒市机场</strong></td><td>机场打车前往酒店，约20分钟</td></tr>
-                            <tr><td class="time-col">20:00+</td><td><strong>晚餐/夜宵</strong></td><td>推荐：芒市烧烤一条街或酒店附近小吃</td></tr>
+                            <tr><td class="time-col">20:00+</td><td><strong>晚餐/夜宵</strong></td><td>推荐：芒市烧烤一条街</td></tr>
                         </table>
                     </div>
                 </div>
@@ -422,9 +152,7 @@
             <section id="day1-a">
                 <h2>Day 1 · 芒市市区</h2>
                 <div class="day-card">
-                    <div class="day-header">
-                        <span class="day-title">4月1日（周二）｜傣族风情</span>
-                    </div>
+                    <div class="day-header"><span class="day-title">4月1日（周二）｜傣族风情</span></div>
                     <div class="day-content">
                         <table>
                             <tr><th class="time-col">时间</th><th>事项</th><th>详情/备注</th></tr>
@@ -442,9 +170,7 @@
             <section id="day2-a">
                 <h2>Day 2 · 丙午街集市</h2>
                 <div class="day-card">
-                    <div class="day-header">
-                        <span class="day-title">4月2日（周三）｜赶集日 <span class="badge badge-warning">集市</span></span>
-                    </div>
+                    <div class="day-header"><span class="day-title">4月2日（周三）｜赶集日 <span class="badge badge-warning">集市</span></span></div>
                     <div class="day-content">
                         <div class="warning-box">
                             <h4>丙午街集市</h4>
@@ -473,10 +199,11 @@
                         <table>
                             <tr><th class="time-col">时间</th><th>事项</th><th>详情/备注</th></tr>
                             <tr><td class="time-col">08:00</td><td><strong>出发</strong></td><td>芒市→瑞丽，G56高速，85km，1.5h</td></tr>
-                            <tr><td class="time-col">09:30-11:00</td><td><strong>一寨两国</strong></td><td>71号界碑、一秋荡两国；门票30元</td></tr>
-                            <tr><td class="time-col">11:30-12:30</td><td><strong>姐告国门</strong></td><td>国门拍照+中缅友谊街购物；免费</td></tr>
-                            <tr><td class="time-col">12:30-14:00</td><td><strong>午餐：瑞丽活螃蟹</strong></td><td>人保路总店，双拼（香辣+清蒸），人均105元</td></tr>
-                            <tr><td class="time-col">14:30-17:00</td><td><strong>莫里热带雨林</strong></td><td>莫里瀑布+雨林步道；门票50元</td></tr>
+                            <tr><td class="time-col">09:30-10:30</td><td><strong>独树成林</strong></td><td>900年树龄巨型榕树，蔚为壮观；门票15元</td></tr>
+                            <tr><td class="time-col">11:00-12:00</td><td><strong>一寨两国</strong></td><td>71号界碑、一秋荡两国；门票30元；开园即入避团</td></tr>
+                            <tr><td class="time-col">12:00-13:00</td><td><strong>姐告国门</strong></td><td>国门拍照+中缅友谊街购物；免费</td></tr>
+                            <tr><td class="time-col">13:00-14:30</td><td><strong>午餐：瑞丽活螃蟹</strong></td><td>人保路总店，双拼（香辣+清蒸），人均105元</td></tr>
+                            <tr><td class="time-col">15:00-17:00</td><td><strong>莫里热带雨林</strong></td><td>莫里瀑布+雨林步道；门票50元</td></tr>
                             <tr><td class="time-col">17:00</td><td><strong>返程</strong></td><td>瑞丽→芒市，1.5h</td></tr>
                             <tr><td class="time-col">19:30-21:00</td><td><strong>晚餐：润美民族园</strong></td><td>景颇族手抓饭，2-3人套餐150-200元</td></tr>
                         </table>
@@ -495,7 +222,7 @@
                         <table>
                             <tr><th class="time-col">时间</th><th>事项</th><th>详情/备注</th></tr>
                             <tr><td class="time-col">08:00</td><td><strong>出发</strong></td><td>芒市→腾冲，180km，2-2.5h</td></tr>
-                            <tr><td class="time-col">10:30-14:00</td><td><strong>和顺古镇</strong></td><td>图书馆+野鸭湖+艾思奇故居；门票55元；午餐<strong>有芬餐馆</strong></td></tr>
+                            <tr><td class="time-col">10:30-14:00</td><td><strong>和顺古镇</strong></td><td>图书馆、野鸭湖、艾思奇故居、寸氏宗祠；门票55元；午餐<strong>有芬餐馆</strong></td></tr>
                             <tr><td class="time-col">14:30-17:00</td><td><strong>热海大滚锅</strong></td><td>15:30错峰；煮鸡蛋体验（5元/串）</td></tr>
                             <tr><td class="time-col">17:00-18:00</td><td><strong>可选：黄瓜箐温泉</strong></td><td>原生硫磺泉，30-50元，极简陋</td></tr>
                             <tr><td class="time-col">18:00</td><td><strong>返程</strong></td><td>腾冲→芒市，2h</td></tr>
@@ -508,16 +235,14 @@
             <section id="day5-a">
                 <h2>Day 5 · 山野咖啡日</h2>
                 <div class="day-card">
-                    <div class="day-header">
-                        <span class="day-title">4月5日（周六/清明）｜高黎贡山+咖啡庄园</span>
-                    </div>
+                    <div class="day-header"><span class="day-title">4月5日（周六/清明）｜高黎贡山+咖啡庄园</span></div>
                     <div class="day-content">
                         <table>
                             <tr><th class="time-col">时间</th><th>事项</th><th>详情/备注</th></tr>
                             <tr><td class="time-col">07:00</td><td><strong>出发</strong></td><td>芒市→百花岭，2h；最后30km盘山砂石路</td></tr>
                             <tr><td class="time-col">09:00-13:00</td><td><strong>高黎贡山徒步</strong></td><td>百花岭-阴阳谷路线，8km/3-4h；向导200元/天；野温泉</td></tr>
                             <tr><td class="time-col">13:00-14:00</td><td><strong>路餐</strong></td><td>自备傣味糯米饭+酸角糕+挂耳咖啡</td></tr>
-                            <tr><td class="time-col">14:30-16:30</td><td><strong>比顿咖啡庄园</strong></td><td>手冲体验，90分钟，80-150元/人</td></tr>
+                            <tr><td class="time-col">14:30-16:30</td><td><strong>咖啡庄园（二选一）</strong></td><td><strong>Option 1: 比顿咖啡庄园</strong> - 设施完善，手冲体验80-150元/人<br><strong>Option 2: 乎壳咖啡庄园</strong> - 可看怒江峡谷，路况较差</td></tr>
                             <tr><td class="time-col">17:00</td><td><strong>返程+还车</strong></td><td>潞江坝→芒市，1.5h；途中采购芒果；晚7-8点还车</td></tr>
                             <tr><td class="time-col">19:30</td><td><strong>晚餐：芒市烧烤一条街</strong></td><td>烤五花肉+包烧脑花+柠檬烤鱼+缅甸啤酒</td></tr>
                         </table>
@@ -528,15 +253,13 @@
             <section id="day6-a">
                 <h2>Day 6 · 离开</h2>
                 <div class="day-card">
-                    <div class="day-header">
-                        <span class="day-title">4月6日（周日）｜早班机返程</span>
-                    </div>
+                    <div class="day-header"><span class="day-title">4月6日（周日）｜早班机返程</span></div>
                     <div class="day-content">
                         <table>
                             <tr><th class="time-col">时间</th><th>事项</th><th>详情/备注</th></tr>
-                            <tr><td class="time-col">05:30</td><td><strong>起床</strong></td><td>设3个闹钟，间隔5分钟</td></tr>
-                            <tr><td class="time-col">06:00</td><td><strong>出发</strong></td><td>前往芒市机场，车程20分钟</td></tr>
-                            <tr><td class="time-col">07:00</td><td><strong>起飞</strong></td><td>芒市✈️重庆，飞行2h</td></tr>
+                            <tr><td class="time-col">05:30</td><td><strong>起床</strong></td><td>设3个闹钟</td></tr>
+                            <tr><td class="time-col">06:00</td><td><strong>出发机场</strong></td><td>车程20分钟</td></tr>
+                            <tr><td class="time-col">07:00</td><td><strong>起飞</strong></td><td>芒市✈️重庆</td></tr>
                         </table>
                     </div>
                 </div>
@@ -550,24 +273,19 @@
                 <ul>
                     <li><a href="#overview-b">行程概览</a></li>
                     <li><a href="#villages">芒市乡村游</a></li>
-                    <li><a href="#weather">天气穿衣</a></li>
-                    <li><a href="#packing">物品清单</a></li>
                     <li><a href="#day0-b">Day 0 抵达</a></li>
                     <li><a href="#day1-b">Day 1 乡村游</a></li>
                     <li><a href="#day2-b">Day 2 集市+温泉</a></li>
                     <li><a href="#day3-b">Day 3 腾冲</a></li>
-                    <li><a href="#day4-b">Day 4 温泉</a></li>
+                    <li><a href="#day4-b">Day 4 温泉+早市</a></li>
                     <li><a href="#day5-b">Day 5 高黎贡山</a></li>
                     <li><a href="#day6-b">Day 6 离开</a></li>
-                    <li><a href="#food">美食推荐</a></li>
-                    <li><a href="#tips">注意事项</a></li>
                 </ul>
             </nav>
 
             <section id="overview-b">
                 <h2>Plan B · 行程概览</h2>
                 <p>本方案<strong>不去瑞丽</strong>，改为深度游玩芒市周边傣族村寨，并在<strong>腾冲和顺古镇住一晚</strong>，享受温泉休闲。</p>
-                
                 <table>
                     <tr><th>配置项</th><th>数值</th><th>说明</th></tr>
                     <tr><td>总天数</td><td><code>7</code></td><td>3月31日 - 4月6日</td></tr>
@@ -594,7 +312,7 @@
                     <tr><td>4月1日</td><td>周二</td><td>🌿 芒市乡村游（上井坎+出冬瓜）</td><td>芒市</td></tr>
                     <tr><td>4月2日</td><td>周三</td><td>丙午街集市 + 芒晃村 + 树洞温泉</td><td>芒市</td></tr>
                     <tr><td>4月3日</td><td>周四</td><td>🚗 芒市→腾冲（和顺古镇）</td><td>🏨 和顺古镇</td></tr>
-                    <tr><td>4月4日</td><td>周五/清明</td><td>⛰️ 腾冲西线 + 温泉</td><td>🏨 和顺古镇</td></tr>
+                    <tr><td>4月4日</td><td>周五/清明</td><td>⛰️ 腾冲西线 + 温泉 + 绮罗早市</td><td>🏨 和顺古镇</td></tr>
                     <tr><td>4月5日</td><td>周六/清明</td><td>🌲 高黎贡山 → 晚回芒市</td><td>芒市</td></tr>
                     <tr><td>4月6日</td><td>周日</td><td>离开芒市</td><td>--</td></tr>
                 </table>
@@ -605,7 +323,7 @@
                 
                 <div class="village-card">
                     <h4>🌳 上井坎村 · 亚洲第一大榕树</h4>
-                    <p><strong>亮点：</strong>460年树龄的巨型榕树，树冠覆盖面积超1000平方米，被当地人称为"独树成林"。树下有傣族村民供奉的神龛。</p>
+                    <p><strong>亮点：</strong>460年树龄的巨型榕树，树冠覆盖面积超1000平方米，被当地人称为"独树成林"。</p>
                     <p><strong>体验：</strong>树下乘凉、拍照打卡、感受傣族树崇拜文化</p>
                     <p><strong>Tips：</strong>距离芒市市区约30分钟车程，建议上午前往光线最佳；无需门票</p>
                 </div>
@@ -614,36 +332,41 @@
                     <h4>🍵 出冬瓜村 · 德昂族酸茶文化</h4>
                     <p><strong>亮点：</strong>德昂族传统村落，以<strong>酸茶</strong>闻名。2022年德昂族酸茶制作技艺被列入联合国教科文组织人类非物质文化遗产代表作名录。</p>
                     <p><strong>体验：</strong>品尝酸茶、学习酸茶制作工艺、体验德昂族织锦手工</p>
-                    <p><strong>Tips：</strong>距离芒市约40分钟，建议预约当地村民家体验；可购买酸茶作为伴手礼</p>
+                    <p><strong>Tips：</strong>距离芒市约40分钟，建议预约当地村民家体验</p>
                 </div>
 
                 <div class="village-card">
                     <h4>🍖 芒晃村 · 烧烤后的消食漫步</h4>
                     <p><strong>亮点：</strong>傣族特色村寨，紧邻芒市烧烤一条街。村内有保存完好的傣族传统建筑、奘房（佛寺）。</p>
                     <p><strong>体验：</strong>晚餐后散步消食、参观奘房、感受傣族村落夜景</p>
-                    <p><strong>Tips：</strong>建议傍晚吃完烧烤后步行前往（约10-15分钟），无需门票</p>
+                    <p><strong>Tips：</strong>建议傍晚吃完烧烤后步行前往（约10-15分钟）</p>
                 </div>
 
                 <div class="village-card">
                     <h4>♨️ 芒棒村 · 树洞温泉</h4>
-                    <p><strong>亮点：</strong>芒市周边最特别的温泉体验——<strong>树洞温泉</strong>。温泉从榕树根部的天然树洞中涌出，形成独特的树洞泡池。</p>
+                    <p><strong>亮点：</strong>芒市周边最特别的温泉体验——<strong>树洞温泉</strong>。温泉从榕树根部的天然树洞中涌出。</p>
                     <p><strong>体验：</strong>树洞温泉泡汤、体验原生态野温泉</p>
-                    <p><strong>Tips：</strong>距离芒市约1小时，建议下午前往；设施简陋（原始状态），需自备毛巾；门票约20-30元；建议穿深色泳衣（硫磺水可能染色）</p>
+                    <p><strong>Tips：</strong>距离芒市约1小时；设施简陋（原始状态）；门票约20-30元；建议穿深色泳衣</p>
+                </div>
+
+                <div class="village-card">
+                    <h4>🐱 猫猫社区 · 芒市文创休闲地</h4>
+                    <p><strong>亮点：</strong>芒市本地文创社区，集咖啡馆、酒吧、艺术空间于一体，是年轻人休闲聚会的好去处。</p>
+                    <p><strong>体验：</strong>喝精酿/咖啡、感受芒市文创氛围、夜晚小酌</p>
+                    <p><strong>Tips：</strong>位于芒市市区，可作为晚餐后休闲选择</p>
                 </div>
             </section>
 
-            <!-- Plan B Day 0-6 -->
             <section id="day0-b">
                 <h2>Day 0 · 抵达芒市</h2>
                 <div class="day-card">
-                    <div class="day-header">
-                        <span class="day-title">3月31日（周一）｜抵达日</span>
-                    </div>
+                    <div class="day-header"><span class="day-title">3月31日（周一）｜抵达日</span></div>
                     <div class="day-content">
                         <table>
                             <tr><th class="time-col">时间</th><th>事项</th><th>详情/备注</th></tr>
                             <tr><td class="time-col">晚上</td><td><strong>抵达芒市机场</strong></td><td>机场打车前往酒店，约20分钟</td></tr>
                             <tr><td class="time-col">20:00+</td><td><strong>晚餐/夜宵</strong></td><td>推荐：芒市烧烤一条街</td></tr>
+                            <tr><td class="time-col">22:00+</td><td><strong>可选：猫猫社区</strong></td><td>芒市文创社区，喝精酿/咖啡，感受本地夜生活</td></tr>
                         </table>
                     </div>
                 </div>
@@ -652,18 +375,17 @@
             <section id="day1-b">
                 <h2>Day 1 · 芒市乡村游</h2>
                 <div class="day-card">
-                    <div class="day-header">
-                        <span class="day-title">4月1日（周二）｜上井坎村+出冬瓜村</span>
-                    </div>
+                    <div class="day-header"><span class="day-title">4月1日（周二）｜上井坎村+出冬瓜村</span></div>
                     <div class="day-content">
                         <table>
                             <tr><th class="time-col">时间</th><th>事项</th><th>详情/备注</th></tr>
-                            <tr><td class="time-col">08:00-09:00</td><td><strong>早餐：林氏圆子</strong></td><td>圆子饵丝 + 甩粑粑 + 冰咖啡</td></tr>
+                            <tr><td class="time-col">08:00-09:00</td><td><strong>早餐：林氏圆子</strong></td><td>圆子饵丝 + 甩粑粑 + 冰咖啡，人均¥10-20</td></tr>
                             <tr><td class="time-col">09:30-12:00</td><td><strong>上井坎村 · 大榕树</strong></td><td>460年树龄巨型榕树，拍照打卡，感受傣族树崇拜文化</td></tr>
                             <tr><td class="time-col">12:00-13:30</td><td><strong>午餐：村寨农家菜</strong></td><td>品尝傣族家常菜</td></tr>
                             <tr><td class="time-col">14:00-17:00</td><td><strong>出冬瓜村 · 德昂族酸茶</strong></td><td>品尝酸茶、学习酸茶制作工艺、体验德昂族织锦手工</td></tr>
                             <tr><td class="time-col">17:30</td><td><strong>返回芒市市区</strong></td><td>车程约40分钟</td></tr>
                             <tr><td class="time-col">19:00-21:00</td><td><strong>晚餐：天然活螃蟹</strong></td><td>缅甸青蟹双拼，人均¥80-120</td></tr>
+                            <tr><td class="time-col">21:30+</td><td><strong>可选：猫猫社区</strong></td><td>芒市文创社区小酌</td></tr>
                         </table>
                     </div>
                 </div>
@@ -672,9 +394,7 @@
             <section id="day2-b">
                 <h2>Day 2 · 丙午街集市+树洞温泉</h2>
                 <div class="day-card">
-                    <div class="day-header">
-                        <span class="day-title">4月2日（周三）｜赶集+芒晃村+芒棒村温泉</span>
-                    </div>
+                    <div class="day-header"><span class="day-title">4月2日（周三）｜赶集+芒晃村+芒棒村温泉</span></div>
                     <div class="day-content">
                         <table>
                             <tr><th class="time-col">时间</th><th>事项</th><th>详情/备注</th></tr>
@@ -684,7 +404,7 @@
                             <tr><td class="time-col">16:30</td><td><strong>出发芒棒村</strong></td><td>车程约1小时</td></tr>
                             <tr><td class="time-col">17:30-19:30</td><td><strong>芒棒村 · 树洞温泉</strong></td><td>体验独特树洞温泉，水温约40℃，富含硫磺</td></tr>
                             <tr><td class="time-col">20:00</td><td><strong>晚餐：芒市烧烤一条街</strong></td><td>烤五花肉+包烧脑花+柠檬烤鱼</td></tr>
-                            <tr><td class="time-col">21:00+</td><td><strong>芒晃村散步</strong></td><td>烧烤后步行至芒晃村消食，参观奘房</td></tr>
+                            <tr><td class="time-col">21:30+</td><td><strong>芒晃村散步</strong></td><td>烧烤后步行至芒晃村消食，参观奘房</td></tr>
                         </table>
                     </div>
                 </div>
@@ -693,10 +413,7 @@
             <section id="day3-b">
                 <h2>Day 3 · 芒市→腾冲</h2>
                 <div class="day-card">
-                    <div class="day-header">
-                        <span class="day-title">4月3日（周四）｜前往腾冲，住和顺古镇</span>
-                        <span class="route-badge">芒市→腾冲（2h）</span>
-                    </div>
+                    <div class="day-header"><span class="day-title">4月3日（周四）｜前往腾冲，住和顺古镇</span></div>
                     <div class="day-content">
                         <table>
                             <tr><th class="time-col">时间</th><th>事项</th><th>详情/备注</th></tr>
@@ -704,32 +421,31 @@
                             <tr><td class="time-col">08:30</td><td><strong>出发前往腾冲</strong></td><td>芒市→腾冲，180km，2-2.5h</td></tr>
                             <tr><td class="time-col">11:00</td><td><strong>抵达和顺古镇</strong></td><td>入住古镇客栈，放下行李</td></tr>
                             <tr><td class="time-col">12:00-13:30</td><td><strong>午餐：有芬餐馆</strong></td><td>棕包炒肉、大薄片，人均40-60元</td></tr>
-                            <tr><td class="time-col">14:00-18:00</td><td><strong>和顺古镇深度游</strong></td><td>图书馆、野鸭湖、艾思奇故居、寸氏宗祠；门票55元</td></tr>
-                            <tr><td class="time-col">18:00-19:30</td><td><strong>晚餐：古镇内</strong></td><td>品尝腾冲特色：大救驾、饵丝</td></tr>
-                            <tr><td class="time-col">20:00+</td><td><strong>古镇夜景</strong></td><td>漫步古镇小巷，感受宁静夜晚</td></tr>
+                            <tr><td class="time-col">14:00-17:30</td><td><strong>和顺古镇深度游</strong></td><td>图书馆、野鸭湖、艾思奇故居、寸氏宗祠；门票55元</td></tr>
+                            <tr><td class="time-col">17:30-18:30</td><td><strong>椿野咖啡 · 看落日</strong></td><td>和顺古镇网红咖啡馆，露台看落日，拍照打卡</td></tr>
+                            <tr><td class="time-col">18:30-19:30</td><td><strong>晚餐：古镇内</strong></td><td>品尝腾冲特色：大救驾、饵丝</td></tr>
+                            <tr><td class="time-col">20:00+</td><td><strong>古镇夜景</strong></td><td>漫步古镇小巷，感受宁静夜晚；<strong>不渡茶馆</strong>品茶</td></tr>
                         </table>
                     </div>
                 </div>
             </section>
 
             <section id="day4-b">
-                <h2>Day 4 · 腾冲西线+温泉</h2>
+                <h2>Day 4 · 腾冲西线+温泉+早市</h2>
                 <div class="day-card">
-                    <div class="day-header">
-                        <span class="day-title">4月4日（周五/清明）｜热海+温泉休闲</span>
-                    </div>
+                    <div class="day-header"><span class="day-title">4月4日（周五/清明）｜热海+温泉+绮罗早市</span></div>
                     <div class="day-content">
                         <table>
                             <tr><th class="time-col">时间</th><th>事项</th><th>详情/备注</th></tr>
-                            <tr><td class="time-col">08:00-09:00</td><td><strong>古镇早餐</strong></td><td>稀豆粉饵丝/腾冲饵丝</td></tr>
-                            <tr><td class="time-col">09:30-12:00</td><td><strong>热海大滚锅</strong></td><td>煮鸡蛋体验（5元/串），游览约2h；门票50元</td></tr>
+                            <tr><td class="time-col">07:00-08:30</td><td><strong>绮罗早市</strong></td><td>腾冲本地早市，感受市井烟火气，品尝早点</td></tr>
+                            <tr><td class="time-col">09:00-09:30</td><td><strong>古镇早餐</strong></td><td>稀豆粉饵丝/腾冲饵丝</td></tr>
+                            <tr><td class="time-col">10:00-12:00</td><td><strong>热海大滚锅</strong></td><td>煮鸡蛋体验（5元/串），游览约2h；门票50元</td></tr>
                             <tr><td class="time-col">12:00-13:30</td><td><strong>午餐</strong></td><td>热海附近或返回古镇</td></tr>
-                            <tr><td class="time-col">14:00-18:00</td><td><strong>温泉时光（二选一）</strong></td><td>
-                                <strong> Option 1: 洞山温泉</strong> - 设施较好，约80-120元/人<br>
-                                <strong> Option 2: 荷花温泉</strong> - 森林温泉，约150-200元/人
-                            </td></tr>
-                            <tr><td class="time-col">18:30</td><td><strong>返回和顺古镇</strong></td><td>晚餐+休息</td></tr>
-                            <tr><td class="time-col">20:00+</td><td><strong>古镇夜游</strong></td><td>泡温泉后舒适睡眠</td></tr>
+                            <tr><td class="time-col">14:00-15:30</td><td><strong>司莫拉瓦村 · 雷响茶</strong></td><td>佤族村寨，体验雷响茶制作，了解佤族文化</td></tr>
+                            <tr><td class="time-col">16:00-16:30</td><td><strong>大地茶海</strong></td><td>茶海观景，拍照打卡，感受茶园风光</td></tr>
+                            <tr><td class="time-col">17:00-19:00</td><td><strong>温泉时光（二选一）</strong></td><td><strong>Option 1: 洞山温泉</strong> - 设施较好，约80-120元/人<br><strong>Option 2: 荷花温泉</strong> - 森林温泉，约150-200元/人</td></tr>
+                            <tr><td class="time-col">19:30</td><td><strong>返回和顺古镇</strong></td><td>晚餐+休息</td></tr>
+                            <tr><td class="time-col">21:00+</td><td><strong>古镇夜游</strong></td><td>泡温泉后舒适睡眠</td></tr>
                         </table>
                     </div>
                 </div>
@@ -738,9 +454,7 @@
             <section id="day5-b">
                 <h2>Day 5 · 高黎贡山→回芒市</h2>
                 <div class="day-card">
-                    <div class="day-header">
-                        <span class="day-title">4月5日（周六/清明）｜徒步+返程</span>
-                    </div>
+                    <div class="day-header"><span class="day-title">4月5日（周六/清明）｜徒步+返程</span></div>
                     <div class="day-content">
                         <table>
                             <tr><th class="time-col">时间</th><th>事项</th><th>详情/备注</th></tr>
@@ -748,7 +462,7 @@
                             <tr><td class="time-col">07:30</td><td><strong>出发百花岭</strong></td><td>车程约1.5h</td></tr>
                             <tr><td class="time-col">09:00-13:00</td><td><strong>高黎贡山徒步</strong></td><td>百花岭-阴阳谷路线，8km/3-4h；向导200元/天；野温泉</td></tr>
                             <tr><td class="time-col">13:00-14:00</td><td><strong>路餐</strong></td><td>自备干粮</td></tr>
-                            <tr><td class="time-col">14:30-16:30</td><td><strong>比顿咖啡庄园</strong></td><td>手冲体验，80-150元/人</td></tr>
+                            <tr><td class="time-col">14:30-16:30</td><td><strong>咖啡庄园（二选一）</strong></td><td><strong>Option 1: 比顿咖啡庄园</strong> - 设施完善<br><strong>Option 2: 乎壳咖啡庄园</strong> - 可看怒江峡谷</td></tr>
                             <tr><td class="time-col">17:00</td><td><strong>返程芒市</strong></td><td>潞江坝→芒市，1.5h；还车</td></tr>
                             <tr><td class="time-col">19:00</td><td><strong>芒市晚餐</strong></td><td>返回芒市后自由用餐</td></tr>
                         </table>
@@ -759,9 +473,7 @@
             <section id="day6-b">
                 <h2>Day 6 · 离开</h2>
                 <div class="day-card">
-                    <div class="day-header">
-                        <span class="day-title">4月6日（周日）｜早班机返程</span>
-                    </div>
+                    <div class="day-header"><span class="day-title">4月6日（周日）｜早班机返程</span></div>
                     <div class="day-content">
                         <table>
                             <tr><th class="time-col">时间</th><th>事项</th><th>详情/备注</th></tr>
@@ -775,6 +487,7 @@
         </div>
 
         <!-- Shared Sections -->
+        
         <section id="weather">
             <h2>天气穿衣</h2>
             <p>以下天气预报为4月1日-5日行程期间数据，每日自动更新。</p>
@@ -863,33 +576,27 @@
             <p>滇西南旅行指南 · Plan A/B 双方案可选</p>
             <p style="margin-top: 8px; color: var(--text-secondary);">Updated: 2026-03-17</p>
         </footer>
-    </div>
 
-    <script>
-        // Plan Switcher
-        function switchPlan(plan) {
-            document.querySelectorAll('.plan-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.closest('.plan-btn').classList.add('active');
-            
-            document.querySelectorAll('.plan-content').forEach(content => content.classList.remove('active'));
-            document.getElementById(plan).classList.add('active');
-        }
-        
-        // Theme toggle
-        function toggleTheme() {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            document.querySelector('.theme-toggle').textContent = newTheme === 'dark' ? '🌙 暗黑' : '☀️ 亮色';
-        }
-        
-        // Init theme
-        (function() {
-            const savedTheme = localStorage.getItem('theme') || 'dark';
-            document.documentElement.setAttribute('data-theme', savedTheme);
-            document.querySelector('.theme-toggle').textContent = savedTheme === 'dark' ? '🌙 暗黑' : '☀️ 亮色';
-        })();
-    </script>
+        <script>
+            function switchPlan(plan) {
+                document.querySelectorAll('.plan-btn').forEach(btn => btn.classList.remove('active'));
+                event.target.closest('.plan-btn').classList.add('active');
+                document.querySelectorAll('.plan-content').forEach(content => content.classList.remove('active'));
+                document.getElementById(plan).classList.add('active');
+            }
+            function toggleTheme() {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                document.querySelector('.theme-toggle').textContent = newTheme === 'dark' ? '🌙 暗黑' : '☀️ 亮色';
+            }
+            (function() {
+                const savedTheme = localStorage.getItem('theme') || 'dark';
+                document.documentElement.setAttribute('data-theme', savedTheme);
+                document.querySelector('.theme-toggle').textContent = savedTheme === 'dark' ? '🌙 暗黑' : '☀️ 亮色';
+            })();
+        </script>
+    </div>
 </body>
 </html>
