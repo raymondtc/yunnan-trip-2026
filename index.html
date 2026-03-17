@@ -40,7 +40,6 @@
             padding: 40px 32px;
         }
         
-        /* Header */
         header {
             border-bottom: 1px solid var(--border);
             padding-bottom: 24px;
@@ -59,7 +58,6 @@
             font-size: 1.125rem;
         }
         
-        /* Navigation */
         .toc {
             background: var(--bg-secondary);
             border: 1px solid var(--border);
@@ -99,7 +97,6 @@
             color: white;
         }
         
-        /* Section Headers */
         h2 {
             font-size: 1.5rem;
             font-weight: 600;
@@ -120,35 +117,6 @@
             margin: 24px 0 12px;
         }
         
-        /* Quick Config Box */
-        .quick-config {
-            background: var(--code-bg);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 16px 20px;
-            margin: 24px 0;
-            font-family: 'SF Mono', Monaco, monospace;
-            font-size: 0.875rem;
-            line-height: 1.6;
-        }
-        
-        .quick-config .comment {
-            color: var(--text-secondary);
-        }
-        
-        .quick-config .key {
-            color: #0550ae;
-        }
-        
-        .quick-config .string {
-            color: #0a3069;
-        }
-        
-        .quick-config .number {
-            color: #0550ae;
-        }
-        
-        /* Tables */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -174,15 +142,9 @@
             vertical-align: top;
         }
         
-        tr:last-child td {
-            border-bottom: none;
-        }
+        tr:last-child td { border-bottom: none; }
+        tr:hover { background: var(--bg-secondary); }
         
-        tr:hover {
-            background: var(--bg-secondary);
-        }
-        
-        /* Badges */
         .badge {
             display: inline-block;
             padding: 2px 8px;
@@ -192,27 +154,11 @@
             margin-left: 6px;
         }
         
-        .badge-success {
-            background: var(--success-soft);
-            color: var(--success);
-        }
+        .badge-success { background: var(--success-soft); color: var(--success); }
+        .badge-warning { background: var(--warning-soft); color: var(--warning); }
+        .badge-danger { background: var(--danger-soft); color: var(--danger); }
+        .badge-accent { background: var(--accent-soft); color: var(--accent); }
         
-        .badge-warning {
-            background: var(--warning-soft);
-            color: var(--warning);
-        }
-        
-        .badge-danger {
-            background: var(--danger-soft);
-            color: var(--danger);
-        }
-        
-        .badge-accent {
-            background: var(--accent-soft);
-            color: var(--accent);
-        }
-        
-        /* Info Boxes */
         .info-box {
             border-left: 4px solid var(--accent);
             background: var(--accent-soft);
@@ -245,23 +191,6 @@
             color: var(--warning);
         }
         
-        .danger-box {
-            border-left: 4px solid var(--danger);
-            background: var(--danger-soft);
-            padding: 16px 20px;
-            margin: 24px 0;
-            border-radius: 0 6px 6px 0;
-        }
-        
-        .danger-box h4 {
-            margin-top: 0;
-            font-size: 0.875rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--danger);
-        }
-        
-        /* Day Card */
         .day-card {
             border: 1px solid var(--border);
             border-radius: 6px;
@@ -280,16 +209,10 @@
             gap: 8px;
         }
         
-        .day-title {
-            font-weight: 600;
-            font-size: 1rem;
-        }
+        .day-title { font-weight: 600; font-size: 1rem; }
         
-        .day-content {
-            padding: 20px;
-        }
+        .day-content { padding: 20px; }
         
-        /* Gallery */
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -307,9 +230,7 @@
             transition: box-shadow 0.2s;
         }
         
-        .gallery-item:hover {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
+        .gallery-item:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
         
         .gallery-item img {
             width: 100%;
@@ -342,11 +263,8 @@
             transition: opacity 0.2s;
         }
         
-        .xhs-link:hover {
-            opacity: 0.9;
-        }
+        .xhs-link:hover { opacity: 0.9; }
         
-        /* Modal */
         .modal {
             display: none;
             position: fixed;
@@ -378,7 +296,6 @@
             cursor: pointer;
         }
         
-        /* Inline Code */
         code {
             font-family: 'SF Mono', Monaco, monospace;
             background: var(--code-bg);
@@ -387,27 +304,52 @@
             font-size: 0.85em;
         }
         
-        /* Lists */
-        ul, ol {
-            margin: 12px 0;
-            padding-left: 24px;
+        ul, ol { margin: 12px 0; padding-left: 24px; }
+        li { margin: 6px 0; }
+        
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        
+        .time-col {
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.8125rem;
+            color: var(--text-secondary);
+            white-space: nowrap;
         }
         
-        li {
-            margin: 6px 0;
+        .route-badge {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            background: var(--bg-secondary);
+            padding: 4px 10px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
         }
         
-        /* Links */
-        a {
-            color: var(--accent);
-            text-decoration: none;
+        .food-section {
+            background: var(--bg-secondary);
+            border-radius: 6px;
+            padding: 16px 20px;
+            margin-top: 16px;
         }
         
-        a:hover {
-            text-decoration: underline;
+        .food-section h4 {
+            margin-top: 0;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
         }
         
-        /* Theme Toggle */
+        footer {
+            margin-top: 64px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            text-align: center;
+        }
+        
         .theme-toggle {
             position: fixed;
             top: 20px;
@@ -423,11 +365,8 @@
             z-index: 100;
         }
         
-        .theme-toggle:hover {
-            background: var(--border);
-        }
+        .theme-toggle:hover { background: var(--border); }
         
-        /* Light mode override */
         [data-theme="light"] {
             --bg: #ffffff;
             --bg-secondary: #f6f8fa;
@@ -445,43 +384,6 @@
             --code-bg: #f6f8fa;
         }
         
-        /* Route badge */
-        .route-badge {
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-            background: var(--bg-secondary);
-            padding: 4px 10px;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-        }
-        
-        /* Food section */
-        .food-section {
-            background: var(--bg-secondary);
-            border-radius: 6px;
-            padding: 16px 20px;
-            margin-top: 16px;
-        }
-        
-        .food-section h4 {
-            margin-top: 0;
-            font-size: 0.875rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--text-secondary);
-        }
-        
-        /* Footer */
-        footer {
-            margin-top: 64px;
-            padding-top: 32px;
-            border-top: 1px solid var(--border);
-            color: var(--text-secondary);
-            font-size: 0.875rem;
-            text-align: center;
-        }
-        
-        /* Responsive */
         @media (max-width: 768px) {
             .container { padding: 20px 16px; }
             header h1 { font-size: 1.5rem; }
@@ -496,14 +398,17 @@
     <div class="container">
         <header>
             <h1>滇西南旅行指南</h1>
-            <p class="subtitle">芒市5晚连住 · 零换酒店优化版</p>
+            <p class="subtitle">芒市6晚连住 · 零换酒店优化版</p>
         </header>
         
         <nav class="toc">
             <h2>目录</h2>
             <ul>
                 <li><a href="#overview">行程概览</a></li>
+                <li><a href="#weather">天气穿衣</a></li>
+                <li><a href="#packing">物品清单</a></li>
                 <li><a href="#spots">景点预览</a></li>
+                <li><a href="#day0">Day 0</a></li>
                 <li><a href="#day1">Day 1</a></li>
                 <li><a href="#day2">Day 2</a></li>
                 <li><a href="#day3">Day 3</a></li>
@@ -514,10 +419,10 @@
                 <li><a href="#tips">注意事项</a></li>
             </ul>
         </nav>
-        
+
         <section id="overview">
             <h2>行程概览</h2>
-            <p>本行程采用<strong>芒市5晚连住</strong>策略，彻底告别频繁换酒店的困扰。以芒市为中心，每日向外辐射游玩，单日最长驾驶控制在2小时内。</p>
+            <p>本行程采用<strong>芒市6晚连住</strong>策略，3月31日晚抵达，4月6日早离开。租车时间为4月3日-5日（3天），用于瑞丽、腾冲、高黎贡山行程。</p>
             
             <table>
                 <tr>
@@ -527,64 +432,237 @@
                 </tr>
                 <tr>
                     <td>总天数</td>
-                    <td><code>6</code></td>
-                    <td>4月1日 - 4月6日</td>
+                    <td><code>7</code></td>
+                    <td>3月31日 - 4月6日</td>
                 </tr>
                 <tr>
                     <td>连住晚数</td>
-                    <td><code>5</code> <span class="badge badge-success">优势</span></td>
+                    <td><code>6</code> <span class="badge badge-success">优势</span></td>
                     <td>芒市同一酒店，无需打包行李</td>
                 </tr>
                 <tr>
-                    <td>换酒店次数</td>
-                    <td><code>0</code> <span class="badge badge-success">优势</span></td>
-                    <td>彻底告别退房/入住损耗</td>
+                    <td>租车天数</td>
+                    <td><code>3</code></td>
+                    <td>4月3日早 - 4月5日晚</td>
                 </tr>
                 <tr>
                     <td>单日最长驾驶</td>
                     <td><code>4h</code></td>
                     <td>芒市↔腾冲往返（单程2h）</td>
                 </tr>
-                <tr>
-                    <td>覆盖城市</td>
-                    <td><code>3</code></td>
-                    <td>芒市、瑞丽、腾冲</td>
-                </tr>
             </table>
-            
+
             <div class="info-box">
-                <h4>零换酒店优势</h4>
+                <h4>行程亮点</h4>
                 <ul>
-                    <li>彻底告别打包损耗，行李全程摊开不用收</li>
-                    <li>早上出发时间更灵活，不用赶退房</li>
-                    <li>特产采购后直接回酒店装箱，不用搬来搬去</li>
+                    <li><strong>丙午街集市：</strong>4月2日（周三）恰逢集市日，体验傣族赶摆</li>
+                    <li><strong>零换酒店：</strong>6晚连住芒市，行李摊开不用收</li>
+                    <li><strong>错峰租车：</strong>仅租3天，覆盖远距离行程，市区游玩打车即可</li>
                 </ul>
             </div>
-            
+
             <table>
                 <tr>
-                    <th>对比项</th>
-                    <th>传统方案</th>
-                    <th>本方案 <span class="badge badge-success">优化</span></th>
+                    <th>日期</th>
+                    <th>星期</th>
+                    <th>行程</th>
+                    <th>交通</th>
                 </tr>
                 <tr>
-                    <td>住宿安排</td>
-                    <td>芒市3晚 + 腾冲1晚 + 芒市1晚</td>
-                    <td><strong>芒市5晚连住同一酒店</strong></td>
+                    <td>3月31日</td>
+                    <td>周一</td>
+                    <td>抵达芒市</td>
+                    <td>机场打车</td>
                 </tr>
                 <tr>
-                    <td>换酒店次数</td>
-                    <td>2次（打包/退房/入住）</td>
-                    <td><strong>0次</strong></td>
+                    <td>4月1日</td>
+                    <td>周二</td>
+                    <td>芒市市区游</td>
+                    <td>打车</td>
                 </tr>
                 <tr>
-                    <td>驾驶强度</td>
-                    <td>≤1小时/天</td>
-                    <td><strong>单日最长4小时（往返各2h）</strong></td>
+                    <td>4月2日</td>
+                    <td>周三</td>
+                    <td>丙午街集市 + 芒市</td>
+                    <td>打车</td>
+                </tr>
+                <tr>
+                    <td>4月3日</td>
+                    <td>周四</td>
+                    <td>瑞丽当日往返</td>
+                    <td>🚗 租车</td>
+                </tr>
+                <tr>
+                    <td>4月4日</td>
+                    <td>周五/清明</td>
+                    <td>腾冲西线</td>
+                    <td>🚗 租车</td>
+                </tr>
+                <tr>
+                    <td>4月5日</td>
+                    <td>周六/清明</td>
+                    <td>高黎贡山 + 咖啡庄园</td>
+                    <td>🚗 租车（晚还车）</td>
+                </tr>
+                <tr>
+                    <td>4月6日</td>
+                    <td>周日</td>
+                    <td>离开芒市</td>
+                    <td>机场打车</td>
                 </tr>
             </table>
         </section>
-        
+
+        <section id="weather">
+            <h2>天气穿衣</h2>
+            <p>以下天气数据每日自动更新，出行前请查看最新预报。</p>
+            
+            <div class="info-box">
+                <h4>📍 芒市 · 当前天气</h4>
+                <p id="mangshi-weather">加载中...</p>
+            </div>
+
+            <div class="warning-box">
+                <h4>👔 穿衣建议</h4>
+                <ul>
+                    <li><strong>白天：</strong>短袖/薄长袖 + 防晒衣（紫外线强）</li>
+                    <li><strong>早晚：</strong>薄外套（温差10-15℃）</li>
+                    <li><strong>高黎贡山：</strong>防滑登山鞋 + 冲锋衣（山区多雨）</li>
+                    <li><strong>温泉日：</strong>泳衣 + 速干毛巾</li>
+                </ul>
+            </div>
+
+            <table>
+                <tr>
+                    <th>物品</th>
+                    <th>建议</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td>上衣</td>
+                    <td>短袖 3-4件 + 薄长袖 2件</td>
+                    <td>速干材质优先</td>
+                </tr>
+                <tr>
+                    <td>外套</td>
+                    <td>薄外套 1件 + 防晒衣 1件</td>
+                    <td>早晚温差大</td>
+                </tr>
+                <tr>
+                    <td>裤子</td>
+                    <td>长裤 2条 + 短裤 1条</td>
+                    <td>徒步需长裤</td>
+                </tr>
+                <tr>
+                    <td>鞋子</td>
+                    <td>运动鞋 + 拖鞋 + 登山鞋</td>
+                    <td>高黎贡山需防滑</td>
+                </tr>
+                <tr>
+                    <td>防晒</td>
+                    <td>SPF50+ 防晒霜 + 帽子 + 墨镜</td>
+                    <td>必备！紫外线极强</td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="packing">
+            <h2>物品清单</h2>
+            
+            <h3>💊 药品准备</h3>
+            <table>
+                <tr>
+                    <th>类别</th>
+                    <th>药品</th>
+                    <th>用途</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td rowspan="3">肠胃</td>
+                    <td>蒙脱石散</td>
+                    <td>腹泻</td>
+                    <td>饮食不习惯备用</td>
+                </tr>
+                <tr>
+                    <td>藿香正气水/胶囊</td>
+                    <td>中暑、肠胃不适</td>
+                    <td>热带气候易中暑</td>
+                </tr>
+                <tr>
+                    <td>健胃消食片</td>
+                    <td>消化不良</td>
+                    <td>美食多吃不消化</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">感冒</td>
+                    <td>感冒灵/白加黑</td>
+                    <td>感冒症状</td>
+                    <td>温差大易感冒</td>
+                </tr>
+                <tr>
+                    <td>布洛芬/对乙酰氨基酚</td>
+                    <td>退烧止痛</td>
+                    <td>头痛、发热</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">外伤</td>
+                    <td>创可贴</td>
+                    <td>小伤口</td>
+                    <td>徒步备用</td>
+                </tr>
+                <tr>
+                    <td>碘伏棉签</td>
+                    <td>消毒</td>
+                    <td>独立包装方便</td>
+                </tr>
+                <tr>
+                    <td rowspan="3">其他</td>
+                    <td>氯雷他定/西替利嗪</td>
+                    <td>抗过敏</td>
+                    <td>花粉、食物过敏</td>
+                </tr>
+                <tr>
+                    <td>晕车药</td>
+                    <td>防晕车</td>
+                    <td>山路多，容易晕车</td>
+                </tr>
+                <tr>
+                    <td>驱蚊液/止痒膏</td>
+                    <td>防蚊虫</td>
+                    <td>热带雨林蚊虫多</td>
+                </tr>
+            </table>
+
+            <h3>🎒 必备物品</h3>
+            <table>
+                <tr>
+                    <th>类别</th>
+                    <th>物品</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td>证件</td>
+                    <td>身份证、驾照</td>
+                    <td>边境地区随时检查</td>
+                </tr>
+                <tr>
+                    <td>电子</td>
+                    <td>充电宝、充电线、车载充电器</td>
+                    <td>租车需车载充电器</td>
+                </tr>
+                <tr>
+                    <td>洗漱</td>
+                    <td>个人洗漱用品</td>
+                    <td>部分酒店不提供</td>
+                </tr>
+                <tr>
+                    <td>其他</td>
+                    <td>雨伞/雨衣、保温杯、湿巾</td>
+                    <td>山区天气多变</td>
+                </tr>
+            </table>
+        </section>
+
         <section id="spots">
             <h2>景点预览</h2>
             <p>以下图片来源于小红书用户分享，点击可放大查看。</p>
@@ -627,13 +705,12 @@
                 </div>
             </div>
         </section>
-        
-        <section id="day1">
-            <h2>Day 1 · 芒市市区</h2>
+
+        <section id="day0">
+            <h2>Day 0 · 抵达芒市</h2>
             <div class="day-card">
                 <div class="day-header">
-                    <span class="day-title">4月1日（周二）｜傣族风情·抵达日</span>
-                    <span class="badge badge-accent">抵达日</span>
+                    <span class="day-title">3月31日（周一）｜抵达日</span>
                 </div>
                 <div class="day-content">
                     <table>
@@ -643,7 +720,44 @@
                             <th>详情/备注</th>
                         </tr>
                         <tr>
-                            <td class="time-col">10:00-12:00</td>
+                            <td class="time-col">晚上</td>
+                            <td><strong>抵达芒市机场</strong></td>
+                            <td>机场打车前往酒店，约20分钟</td>
+                        </tr>
+                        <tr>
+                            <td class="time-col">20:00+</td>
+                            <td><strong>晚餐/夜宵</strong></td>
+                            <td>推荐：芒市烧烤一条街或酒店附近小吃</td>
+                        </tr>
+                    </table>
+                    <div class="info-box">
+                        <h4>入住提示</h4>
+                        <p>确认酒店免费停车，为租车做准备。提前联系酒店预留车位。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="day1">
+            <h2>Day 1 · 芒市市区</h2>
+            <div class="day-card">
+                <div class="day-header">
+                    <span class="day-title">4月1日（周二）｜傣族风情</span>
+                </div>
+                <div class="day-content">
+                    <table>
+                        <tr>
+                            <th class="time-col">时间</th>
+                            <th>事项</th>
+                            <th>详情/备注</th>
+                        </tr>
+                        <tr>
+                            <td class="time-col">08:00-09:00</td>
+                            <td><strong>早餐：林氏圆子</strong></td>
+                            <td>圆子饵丝 + 甩粑粑 + 冰咖啡，人均¥10-20</td>
+                        </tr>
+                        <tr>
+                            <td class="time-col">09:30-12:00</td>
                             <td><strong>勐焕大金塔→银塔</strong></td>
                             <td>金塔入银塔出；银塔拍照出片；联票80元；塔内脱鞋</td>
                         </tr>
@@ -668,19 +782,62 @@
                             <td>建筑观赏+小吃+歌舞表演（节假日20:00-21:00）</td>
                         </tr>
                     </table>
-                    <div class="food-section">
-                        <h4>美食亮点</h4>
-                        <p><strong>百思特必点：</strong>勐焕老奶泡鲁达（椰奶现榨）、柠檬撒撇（牛苦肠水+柠檬汁）、竹米煮鸡（需提前2h预订）</p>
-                    </div>
                 </div>
             </div>
         </section>
-        
+
         <section id="day2">
-            <h2>Day 2 · 瑞丽当日往返</h2>
+            <h2>Day 2 · 丙午街集市</h2>
             <div class="day-card">
                 <div class="day-header">
-                    <span class="day-title">4月2日（周三）｜边境探秘</span>
+                    <span class="day-title">4月2日（周三）｜赶集日 <span class="badge badge-warning">集市</span></span>
+                </div>
+                <div class="day-content">
+                    <div class="warning-box">
+                        <h4>丙午街集市</h4>
+                        <p>每隔5天一次的傣族传统集市，4月2日恰逢赶集日。可购买当地特产、水果、民族服饰、手工艺品。</p>
+                    </div>
+                    <table>
+                        <tr>
+                            <th class="time-col">时间</th>
+                            <th>事项</th>
+                            <th>详情/备注</th>
+                        </tr>
+                        <tr>
+                            <td class="time-col">08:00-12:00</td>
+                            <td><strong>丙午街集市</strong></td>
+                            <td>傣族赶摆，购买水果、特产、民族服饰；建议早去，中午后陆续收摊</td>
+                        </tr>
+                        <tr>
+                            <td class="time-col">12:00-13:30</td>
+                            <td><strong>午餐：可哆咪小吃</strong></td>
+                            <td>傣味小吃集合</td>
+                        </tr>
+                        <tr>
+                            <td class="time-col">14:00-17:00</td>
+                            <td><strong>自由活动</strong></td>
+                            <td>市区闲逛/咖啡馆休息/补觉</td>
+                        </tr>
+                        <tr>
+                            <td class="time-col">17:00</td>
+                            <td><strong>取车</strong></td>
+                            <td>前往租车点取车，验车、熟悉车况</td>
+                        </tr>
+                        <tr>
+                            <td class="time-col">19:00-21:00</td>
+                            <td><strong>晚餐：天然活螃蟹</strong></td>
+                            <td>缅甸青蟹双拼，人均¥80-120</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="day3">
+            <h2>Day 3 · 瑞丽当日往返</h2>
+            <div class="day-card">
+                <div class="day-header">
+                    <span class="day-title">4月3日（周四）｜边境探秘</span>
                     <span class="route-badge">芒市→瑞丽→芒市（1.5h×2）</span>
                 </div>
                 <div class="day-content">
@@ -708,12 +865,12 @@
                         <tr>
                             <td class="time-col">12:30-14:00</td>
                             <td><strong>午餐：瑞丽活螃蟹</strong></td>
-                            <td>人保路总店，1.5-2斤双拼（香辣+清蒸），香辣汤汁务必拌面，人均105元</td>
+                            <td>人保路总店，1.5-2斤双拼（香辣+清蒸），人均105元</td>
                         </tr>
                         <tr>
                             <td class="time-col">14:30-17:00</td>
                             <td><strong>莫里热带雨林</strong></td>
-                            <td>莫里瀑布+雨林步道+温泉泡脚；门票50元；或改独树成林（15元，40分钟）</td>
+                            <td>莫里瀑布+雨林步道；门票50元；或改独树成林（15元）</td>
                         </tr>
                         <tr>
                             <td class="time-col">17:00</td>
@@ -723,21 +880,25 @@
                         <tr>
                             <td class="time-col">19:30-21:00</td>
                             <td><strong>晚餐：润美民族园</strong></td>
-                            <td>景颇族手抓饭，现烤环节+水酒免费；2-3人套餐150-200元，提前1h预订</td>
+                            <td>景颇族手抓饭，2-3人套餐150-200元，提前1h预订</td>
                         </tr>
                     </table>
                 </div>
             </div>
         </section>
-        
-        <section id="day3">
-            <h2>Day 3 · 腾冲西线</h2>
+
+        <section id="day4">
+            <h2>Day 4 · 腾冲西线</h2>
             <div class="day-card">
                 <div class="day-header">
-                    <span class="day-title">4月3日（周四）｜和顺古镇+热海</span>
+                    <span class="day-title">4月4日（周五/清明）｜和顺古镇+热海</span>
                     <span class="route-badge">芒市→腾冲→芒市（2h×2）</span>
                 </div>
                 <div class="day-content">
+                    <div class="warning-box">
+                        <h4>清明假期提示</h4>
+                        <p>4月4日-6日为清明假期，景区人流可能增加，建议错峰出行。</p>
+                    </div>
                     <table>
                         <tr>
                             <th class="time-col">时间</th>
@@ -747,17 +908,17 @@
                         <tr>
                             <td class="time-col">08:00</td>
                             <td><strong>出发</strong></td>
-                            <td>芒市→腾冲，G56高速，180km，2-2.5h；潞江坝服务区停靠</td>
+                            <td>芒市→腾冲，180km，2-2.5h；潞江坝服务区停靠</td>
                         </tr>
                         <tr>
                             <td class="time-col">10:30-14:00</td>
                             <td><strong>和顺古镇</strong></td>
-                            <td>图书馆+野鸭湖+艾思奇故居；门票55元；午餐<strong>有芬餐馆</strong>（棕包炒肉、大薄片），人均40-60元</td>
+                            <td>图书馆+野鸭湖+艾思奇故居；门票55元；午餐<strong>有芬餐馆</strong>，人均40-60元</td>
                         </tr>
                         <tr>
                             <td class="time-col">14:30-17:00</td>
                             <td><strong>热海大滚锅</strong></td>
-                            <td>15:30错峰，避团高峰；煮鸡蛋体验（5元/串），游览1.5-2h</td>
+                            <td>15:30错峰；煮鸡蛋体验（5元/串），游览1.5-2h</td>
                         </tr>
                         <tr>
                             <td class="time-col">17:00-18:00</td>
@@ -778,13 +939,12 @@
                 </div>
             </div>
         </section>
-        
-        <section id="day4">
-            <h2>Day 4 · 山野咖啡日</h2>
+
+        <section id="day5">
+            <h2>Day 5 · 山野咖啡日</h2>
             <div class="day-card">
                 <div class="day-header">
-                    <span class="day-title">4月4日（周五/清明）｜高黎贡山深度</span>
-                    <span class="badge badge-warning">清明假期</span>
+                    <span class="day-title">4月5日（周六/清明）｜高黎贡山+咖啡庄园</span>
                     <span class="route-badge">芒市→百花岭→潞江坝→芒市</span>
                 </div>
                 <div class="day-content">
@@ -802,7 +962,7 @@
                         <tr>
                             <td class="time-col">09:00-13:00</td>
                             <td><strong>高黎贡山徒步</strong></td>
-                            <td>百花岭-阴阳谷路线，8km/400m爬升/3-4h；向导200元/天；阴阳谷野温泉（一冷一热）</td>
+                            <td>百花岭-阴阳谷路线，8km/400m爬升/3-4h；向导200元/天；阴阳谷野温泉</td>
                         </tr>
                         <tr>
                             <td class="time-col">13:00-14:00</td>
@@ -812,67 +972,28 @@
                         <tr>
                             <td class="time-col">14:30-16:30</td>
                             <td><strong>比顿咖啡庄园</strong></td>
-                            <td>手冲体验（铁皮卡vs卡蒂姆），90分钟，80-150元/人；可选咖啡宴</td>
+                            <td>手冲体验（铁皮卡vs卡蒂姆），90分钟，80-150元/人</td>
                         </tr>
                         <tr>
                             <td class="time-col">17:00</td>
-                            <td><strong>返程</strong></td>
-                            <td>潞江坝→芒市，1.5h，110km；途中采购芒果（1-2元/斤）</td>
+                            <td><strong>返程+还车</strong></td>
+                            <td>潞江坝→芒市，1.5h；途中采购芒果（1-2元/斤）；晚7-8点还车</td>
                         </tr>
                         <tr>
-                            <td class="time-col">19:00</td>
-                            <td><strong>晚餐：芒市</strong></td>
-                            <td>过手米线/傣味烧烤/烧烤一条街</td>
+                            <td class="time-col">19:30</td>
+                            <td><strong>晚餐：芒市烧烤一条街</strong></td>
+                            <td>烤五花肉+包烧脑花+柠檬烤鱼+缅甸啤酒</td>
                         </tr>
                     </table>
                 </div>
             </div>
         </section>
-        
-        <section id="day5">
-            <h2>Day 5 · 芒市慢生活</h2>
-            <div class="day-card">
-                <div class="day-header">
-                    <span class="day-title">4月5日（周六/清明）｜收官日</span>
-                    <span class="badge badge-warning">清明假期</span>
-                </div>
-                <div class="day-content">
-                    <table>
-                        <tr>
-                            <th class="time-col">时间</th>
-                            <th>事项</th>
-                            <th>详情/备注</th>
-                        </tr>
-                        <tr>
-                            <td class="time-col">09:00+</td>
-                            <td><strong>自然醒</strong></td>
-                            <td>睡到自然醒，酒店早餐</td>
-                        </tr>
-                        <tr>
-                            <td class="time-col">10:00-12:30</td>
-                            <td><strong>丙午街/宏利市场</strong></td>
-                            <td>特产采购：牛干巴（80-120元/斤）、酸角糕、小粒咖啡、傣族豆豉；即食稀豆粉饵丝+泡鲁达</td>
-                        </tr>
-                        <tr>
-                            <td class="time-col">15:00-17:00</td>
-                            <td><strong>法帕温泉</strong></td>
-                            <td>傣族传统硫磺泉，40-60元，1.5-2h；配套温泉煮蛋+竹筒饭+香草烤鱼</td>
-                        </tr>
-                        <tr>
-                            <td class="time-col">19:00-21:00</td>
-                            <td><strong>告别晚餐：芒市烧烤一条街</strong></td>
-                            <td>烤五花肉（2-3元/串）+包烧脑花+柠檬烤鱼+缅甸啤酒</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </section>
-        
+
         <section id="day6">
-            <h2>Day 6 · 返程</h2>
+            <h2>Day 6 · 离开</h2>
             <div class="day-card">
                 <div class="day-header">
-                    <span class="day-title">4月6日（周日）｜早班机</span>
+                    <span class="day-title">4月6日（周日）｜早班机返程</span>
                 </div>
                 <div class="day-content">
                     <table>
@@ -900,7 +1021,7 @@
                 </div>
             </div>
         </section>
-        
+
         <section id="food">
             <h2>美食推荐</h2>
             
@@ -943,91 +1064,21 @@
                     <td>¥30-50</td>
                 </tr>
             </table>
-            
-            <h3>分类推荐</h3>
-            
-            <h4>螃蟹/海鲜</h4>
-            <table>
-                <tr>
-                    <th>店名</th>
-                    <th>位置</th>
-                    <th>特色</th>
-                    <th>人均</th>
-                </tr>
-                <tr>
-                    <td>瑞丽活螃蟹（人保路总店）</td>
-                    <td>瑞丽</td>
-                    <td>香辣+清蒸双拼，汤汁拌面</td>
-                    <td>¥105</td>
-                </tr>
-                <tr>
-                    <td>天然活螃蟹</td>
-                    <td>芒市</td>
-                    <td>缅甸青蟹，个头大</td>
-                    <td>¥80-120</td>
-                </tr>
-            </table>
-            
-            <h4>泡鸡脚</h4>
-            <table>
-                <tr>
-                    <th>店名</th>
-                    <th>推荐口味</th>
-                    <th>搭配</th>
-                </tr>
-                <tr>
-                    <td>甘英泡鸡脚</td>
-                    <td>柠檬小米辣</td>
-                    <td>牛油果汁</td>
-                </tr>
-                <tr>
-                    <td>勐焕老奶</td>
-                    <td>泡椒味</td>
-                    <td>泡鲁达</td>
-                </tr>
-            </table>
-            
-            <h4>早点/饵丝</h4>
-            <table>
-                <tr>
-                    <th>店名</th>
-                    <th>特色</th>
-                    <th>人均</th>
-                </tr>
-                <tr>
-                    <td>烂路早点</td>
-                    <td>清汤牛肉饵丝，牛肉汤现熬</td>
-                    <td>¥15</td>
-                </tr>
-                <tr>
-                    <td>林氏圆子</td>
-                    <td>圆子饵丝+甩粑粑</td>
-                    <td>¥10-20</td>
-                </tr>
-            </table>
         </section>
-        
+
         <section id="tips">
             <h2>注意事项</h2>
             
             <div class="warning-box">
                 <h4>驾驶安全</h4>
-                <p>4月3日和4月4日为长途往返日（各4小时驾驶），建议<strong>两人轮换驾驶</strong>，途中在咖啡庄园/服务区休息。</p>
+                <p>4月4日和4月5日为长途驾驶日（各4小时），建议<strong>两人轮换驾驶</strong>，途中服务区休息。</p>
             </div>
-            
+
             <div class="warning-box">
-                <h4>清明错峰</h4>
-                <ul>
-                    <li>4月4日高黎贡山<strong>07:00出发</strong>领先假期人流</li>
-                    <li>4月3日热海<strong>15:30错峰</strong>避团</li>
-                </ul>
+                <h4>边境检查</h4>
+                <p>前往瑞丽需随身携带<strong>身份证</strong>，途中可能有边境检查站。</p>
             </div>
-            
-            <div class="info-box">
-                <h4>酒店选择</h4>
-                <p>优先选择<strong>傣族古镇周边</strong>或<strong>市中心</strong>，确认免费停车且车位充足。</p>
-            </div>
-            
+
             <table>
                 <tr>
                     <th>类别</th>
@@ -1035,43 +1086,42 @@
                     <th>建议</th>
                 </tr>
                 <tr>
-                    <td>装备</td>
-                    <td>防晒</td>
-                    <td>云南紫外线强，SPF50+必备</td>
-                </tr>
-                <tr>
-                    <td>装备</td>
-                    <td>徒步</td>
-                    <td>高黎贡山需防滑登山鞋</td>
-                </tr>
-                <tr>
                     <td>现金</td>
                     <td>边境地区</td>
-                    <td>部分小店不支持移动支付</td>
+                    <td>部分小店不支持移动支付，备500元左右现金</td>
                 </tr>
                 <tr>
-                    <td>证件</td>
-                    <td>边境检查</td>
-                    <td>随身携带身份证</td>
+                    <td>防晒</td>
+                    <td>紫外线强</td>
+                    <td>SPF50+必备，高原紫外线极强</td>
+                </tr>
+                <tr>
+                    <td>徒步</td>
+                    <td>高黎贡山</td>
+                    <td>需防滑登山鞋，山区多雨，带雨具</td>
+                </tr>
+                <tr>
+                    <td>温泉</td>
+                    <td>硫磺泉</td>
+                    <td>金银首饰提前取下，避免氧化变黑</td>
                 </tr>
             </table>
         </section>
-        
+
         <footer>
             <p>滇西南旅行指南 · 芒市连住优化版</p>
             <p style="margin-top: 8px; color: var(--text-secondary);">Updated: 2026-03-17</p>
         </footer>
     </div>
-    
+
     <div class="modal" id="imageModal" onclick="closeModal()">
         <span class="modal-close">&times;</span>
         <img id="modalImg" src="" alt="">
     </div>
-    
+
     <script>
-        // Theme management - Default to dark mode
+        // Theme management
         function initTheme() {
-            // Default to dark mode if no preference saved
             const savedTheme = localStorage.getItem('theme') || 'dark';
             document.documentElement.setAttribute('data-theme', savedTheme);
             updateThemeButton(savedTheme);
@@ -1090,7 +1140,6 @@
             btn.textContent = theme === 'dark' ? '🌙 暗黑' : '☀️ 亮色';
         }
         
-        // Initialize theme on load
         initTheme();
         
         function openModal(element) {
@@ -1109,6 +1158,20 @@
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') closeModal();
         });
+
+        // Weather placeholder - will be updated by cron job
+        function updateWeather() {
+            // This function will be called by the weather cron job
+            // For now, show placeholder
+            const weatherEl = document.getElementById('mangshi-weather');
+            if (weatherEl) {
+                weatherEl.innerHTML = '天气数据由定时任务每日更新 · 当前显示为模板数据<br>' +
+                    '<strong>气温：</strong>18-28℃ · <strong>天气：</strong>多云 · <strong>建议：</strong>短袖+薄外套';
+            }
+        }
+        
+        // Call on load
+        updateWeather();
     </script>
 </body>
 </html>
