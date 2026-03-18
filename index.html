@@ -78,17 +78,21 @@
     <div class="container">
         <header>
             <h1>滇西南旅行指南</h1>
-            <p class="subtitle">芒市连住 · Plan A/B 双方案可选</p>
+            <p class="subtitle">芒市连住 · Plan A/B/C 三方案可选</p>
         </header>
         
         <div class="plan-switcher">
             <button class="plan-btn active" onclick="switchPlan('planA')">
-                📍 Plan A · 芒市连住+瑞丽腾冲<br>
+                📍 Plan A · 芒市6晚+去瑞丽<br>
                 <small style="font-weight: normal; opacity: 0.8;">芒市6晚连住，去瑞丽+腾冲当日往返</small>
             </button>
             <button class="plan-btn" onclick="switchPlan('planB')">
-                🌿 Plan B · 芒市乡村+腾冲深度<br>
-                <small style="font-weight: normal; opacity: 0.8;">不去瑞丽，腾冲住一晚+温泉</small>
+                🌿 Plan B · 腾冲深度游<br>
+                <small style="font-weight: normal; opacity: 0.8;">芒市2晚+腾冲2晚+芒市1晚，免夜路</small>
+            </button>
+            <button class="plan-btn" onclick="switchPlan('planC')">
+                ☕ Plan C · 芒市6晚+不去瑞丽<br>
+                <small style="font-weight: normal; opacity: 0.8;">芒市6晚连住，不去瑞丽，极简零折腾</small>
             </button>
         </div>
 
@@ -486,6 +490,74 @@
             </section>
         </div>
 
+        <!-- Plan C -->
+        <div id="planC" class="plan-content">
+            <nav class="toc">
+                <h2>Plan C 目录</h2>
+                <ul>
+                    <li><a href="#overview-c">行程概览</a></li>
+                    <li><a href="#day2-c">Day 2 芒市周边</a></li>
+                </ul>
+            </nav>
+
+            <section id="overview-c">
+                <h2>Plan C · 行程概览</h2>
+                <p>本行程与 Plan A 基本相同，唯一区别是<strong>4月2日不去瑞丽</strong>，改为芒市周边深度游。适合不想走边境、追求极简零折腾的旅行者。</p>
+                <table>
+                    <tr><th>配置项</th><th>数值</th><th>说明</th></tr>
+                    <tr><td>总天数</td><td><code>7</code></td><td>3月31日 - 4月6日</td></tr>
+                    <tr><td>芒市连住</td><td><code>6晚</code> <span class="badge badge-success">优势</span></td><td>同一酒店，无需打包行李</td></tr>
+                    <tr><td>租车天数</td><td><code>2天</code></td><td>4月4-5日（腾冲、高黎贡山）</td></tr>
+                    <tr><td>核心差异</td><td><span class="badge badge-accent">不去瑞丽</span></td><td>4月2日改为芒市周边游</td></tr>
+                </table>
+
+                <table>
+                    <tr><th>日期</th><th>星期</th><th>行程</th><th>交通</th></tr>
+                    <tr><td>3月31日</td><td>周一</td><td>抵达芒市</td><td>机场打车</td></tr>
+                    <tr><td>4月1日</td><td>周二</td><td>芒市市区游（金塔银塔、美食城）</td><td>打车</td></tr>
+                    <tr><td>4月2日</td><td>周三</td><td><span class="badge badge-accent">芒市周边</span> 孔雀谷+德昂族村寨</td><td>打车</td></tr>
+                    <tr><td>4月3日</td><td>周四</td><td>⛰️ 腾冲西线（和顺古镇、热海大滚锅）</td><td>🚗 租车</td></tr>
+                    <tr><td>4月4日</td><td>周五/清明</td><td>🌲 高黎贡山 + 咖啡庄园</td><td>🚗 租车</td></tr>
+                    <tr><td>4月5日</td><td>周六/清明</td><td>芒市躺平·慢生活</td><td>打车</td></tr>
+                    <tr><td>4月6日</td><td>周日</td><td>离开芒市</td><td>机场打车</td></tr>
+                </table>
+            </section>
+
+            <section id="day2-c">
+                <h2>Day 2 · 芒市周边深度游</h2>
+                <div class="day-card">
+                    <div class="day-header"><span class="day-title">4月2日（周三）｜不去瑞丽 <span class="badge badge-accent">Plan C专属</span></span></div>
+                    <div class="day-content">
+                        <div class="info-box">
+                            <h4>Plan C 特色</h4>
+                            <p>不去瑞丽，改为芒市周边深度游。减少3小时车程，节奏更轻松。</p>
+                        </div>
+                        <table>
+                            <tr><th class="time-col">时间</th><th>事项</th><th>详情/备注</th></tr>
+                            <tr><td class="time-col">09:00</td><td><strong>自然醒+酒店早餐</strong></td><td>睡到自然醒，不赶时间</td></tr>
+                            <tr><td class="time-col">10:00-12:30</td><td><strong>芒市孔雀谷森林公园</strong></td><td>散养互动孔雀，可喂食；门票80元，车程50分钟</td></tr>
+                            <tr><td class="time-col">12:30-14:00</td><td><strong>午餐：勐巴娜西美食城</strong></td><td>正餐宴席（手抓饭/绿叶宴）</td></tr>
+                            <tr><td class="time-col">14:30-16:30</td><td><strong>三台山乡德昂族村寨</strong></td><td>酸茶体验，国家级非遗，2-3h；车程40分钟</td></tr>
+                            <tr><td class="time-col">17:00-18:00</td><td><strong>返回市区休息</strong></td><td>回酒店休整</td></tr>
+                            <tr><td class="time-col">19:00-21:00</td><td><strong>晚餐：润美民族园</strong></td><td>景颇族手抓饭，现烤环节+水酒免费</td></tr>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section id="food-c">
+                <h2>Plan C 其余日程</h2>
+                <p>Plan C 的 4月1日、4月3-6日 行程与 <a href="#planA" onclick="switchPlan('planA')">Plan A</a> 完全相同。</p>
+                <ul>
+                    <li><strong>4月1日：</strong>芒市市区（金塔银塔+百思特+树包塔+珍奇园）</li>
+                    <li><strong>4月3日：</strong>腾冲西线当日往返（和顺+热海）</li>
+                    <li><strong>4月4日：</strong>高黎贡山+咖啡庄园当日往返</li>
+                    <li><strong>4月5日：</strong>芒市躺平（市场+法帕温泉+烧烤）</li>
+                    <li><strong>4月6日：</strong>早班机返程</li>
+                </ul>
+            </section>
+        </div>
+
         <!-- Shared Sections -->
         
         <section id="weather">
@@ -494,7 +566,7 @@
             
             <div class="info-box">
                 <h4>📍 芒市 · 行程期间天气预报</h4>
-                <p style="color: var(--text-secondary); font-size: 0.875rem; margin-bottom: 16px;">更新时间：2026-03-18 08:01</p><table style="margin-top: 0;"><tr><th>日期</th><th>天气</th><th>温度</th><th>穿衣建议</th></tr><tr><td><strong>4月1日 周三</strong></td><td>暂无法获取</td><td>--</td><td>出发前查看最新预报</td></tr><tr><td><strong>4月2日 周四</strong></td><td>暂无法获取</td><td>--</td><td>出发前查看最新预报</td></tr><tr><td><strong>4月3日 周五</strong></td><td>暂无法获取</td><td>--</td><td>出发前查看最新预报</td></tr><tr><td><strong>4月4日 周六</strong></td><td>暂无法获取</td><td>--</td><td>出发前查看最新预报</td></tr><tr><td><strong>4月5日 周日</strong></td><td>暂无法获取</td><td>--</td><td>出发前查看最新预报</td></tr></table></div>
+                <p style="color: var(--text-secondary); font-size: 0.875rem; margin-bottom: 16px;">更新时间：2026-03-18 21:48</p><table style="margin-top: 0;"><tr><th>日期</th><th>天气</th><th>温度</th><th>穿衣建议</th></tr><tr><td><strong>4月1日 周三</strong></td><td>暂无法获取</td><td>--</td><td>出发前查看最新预报</td></tr><tr><td><strong>4月2日 周四</strong></td><td>暂无法获取</td><td>--</td><td>出发前查看最新预报</td></tr><tr><td><strong>4月3日 周五</strong></td><td>暂无法获取</td><td>--</td><td>出发前查看最新预报</td></tr><tr><td><strong>4月4日 周六</strong></td><td>暂无法获取</td><td>--</td><td>出发前查看最新预报</td></tr><tr><td><strong>4月5日 周日</strong></td><td>暂无法获取</td><td>--</td><td>出发前查看最新预报</td></tr></table></div>
 
             <div class="warning-box">
                 <h4>👔 穿衣建议</h4>
